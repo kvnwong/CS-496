@@ -1,6 +1,7 @@
 from google.appengine.ext import ndb
 import webapp2
 import json
+import types
 
 class Boat(ndb.Model):
     id = ndb.StringProperty()
@@ -54,13 +55,12 @@ class BoatHandler(webapp2.RequestHandler):
     def patch(self, id=None):
         if id:
             patch_boat_data = json.loads(self.request.body)
-            patch_boat_data_dict = patch_boat_data.to_dict()
             patch_boat = ndb.Key(urlsafe=id).get()
 
-            if len(patch_boat_data_dict) > 1:
+            if len(patch_boat_data) > 1:
                 self.response.write("can only change one item")
             else:
-                for key in patch_boat_data_dict:
+                for key in patch_boat_data:
                     if key == "name":
                         patch_boat.name = patch_boat_data['name']
                         self.response.write("boat name was updated")
@@ -77,12 +77,15 @@ class BoatHandler(webapp2.RequestHandler):
     def put(self, id=None):
         if id:
             put_boat_data = json.loads(self.request.body)
-            put_boat = ndb.Key(urlsafe=id).get()
-            put_boat.name = put_boat_data['name']
-            put_boat.type = put_boat_data['type']
-            put_boat.length = put_boat_data['length']
-            put_boat.put()
-            self.response.write("boat was updated")
+            if len(put_boat_data) < 3:
+                self.response.write("name, type and length should be in body")
+            else:
+                put_boat = ndb.Key(urlsafe=id).get()
+                put_boat.name = put_boat_data['name']
+                put_boat.type = put_boat_data['type']
+                put_boat.length = put_boat_data['length']
+                put_boat.put()
+                self.response.write("boat was updated")
 
 class Slip(ndb.Model):
     id = ndb.StringProperty()
@@ -93,22 +96,30 @@ class Slip(ndb.Model):
 class SlipHandler(webapp2.RequestHandler):
     def post(self):
         post_slip_data = json.loads(self.request.body)
-        post_slip = Slip(number=post_slip_data['number'],
-                        current_boat=post_slip_data['current_boat'],
-                        arrival_date=post_slip_data['arrival_date'])
 
-        if post_slip.current_boat:
-            post_slip.current_boat = ""
+        post_slip_query_results = [post_slip_query.to_dict()
+                                  for post_slip_query in Slip.query()]
+        found_it = 0
+        for slip in post_slip_query_results:
+            if slip['number'] == post_slip_data['number']:
+                found_it = 1
+                self.response.write("sorry, that slot number is already taken")
+        if not found_it:
+            post_slip = Slip(number=post_slip_data['number'],
+                            current_boat=post_slip_data['current_boat'],
+                            arrival_date=post_slip_data['arrival_date'])
+            if post_slip.current_boat:
+                post_slip.current_boat = ""
 
-        if post_slip.arrival_date:
-            post_slip.arrival_date = ""
+            if post_slip.arrival_date:
+                post_slip.arrival_date = ""
 
-        post_slip.put()
-        post_slip.id = str(post_slip.key.urlsafe())
-        post_slip.put()
-        post_slip_dict = post_slip.to_dict()
-        post_slip_dict['self'] = '/slips/' + post_slip.key.urlsafe()
-        self.response.write(json.dumps(post_slip_dict))
+            post_slip.put()
+            post_slip.id = str(post_slip.key.urlsafe())
+            post_slip.put()
+            post_slip_dict = post_slip.to_dict()
+            post_slip_dict['self'] = '/slips/' + post_slip.key.urlsafe()
+            self.response.write(json.dumps(post_slip_dict))
 
     def get(self, id=None):
         if id:
@@ -137,27 +148,25 @@ class SlipHandler(webapp2.RequestHandler):
     def patch(self, id=None):
         if id:
             patch_slip_data = json.loads(self.request.body)
-            patch_slip_data_dict = patch_slip_data.to_dict()
             patch_slip = ndb.Key(urlsafe=id).get()
 
-            if len(patch_slip_data_dict) > 1:
+            if len(patch_slip_data) > 1:
                 self.response.write("can only change one item")
             else:
-                for key in patch_slip_data_dict:
+                for key in patch_slip_data:
                     if key == "number":
-                        patch_slip.number = patch_slip_data['number']
-                        self.response.write("slip number was updated")
-                patch_slip.put()
+                        patch_slip_query_results = [patch_slip_query.to_dict()
+                                                  for patch_slip_query in Slip.query()]
+                        found_it = 0
+                        for slip in patch_slip_query_results:
+                            if slip['number'] == patch_slip_data['number']:
+                                found_it = 1
+                                self.response.write("sorry, that slot number is already taken")
+                        if not found_it:
+                            patch_slip.number = patch_slip_data['number']
+                            self.response.write("slip number was updated")
 
-    def put(self, id=None):
-        if id:
-            put_slip_data = json.loads(self.request.body)
-            put_slip = ndb.Key(urlsafe=id).get()
-            put_slip.name = put_slip_data['name']
-            put_slip.type = put_slip_data['type']
-            put_slip.length = put_slip_data['length']
-            put_slip.put()
-            self.response.write("slip was updated")
+                patch_slip.put()
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
