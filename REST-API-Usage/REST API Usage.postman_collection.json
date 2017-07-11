@@ -173,7 +173,7 @@
 				}
 			],
 			"request": {
-				"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
+				"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -195,7 +195,7 @@
 				}
 			],
 			"request": {
-				"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
+				"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
 				"method": "PATCH",
 				"header": [
 					{
@@ -228,7 +228,7 @@
 				}
 			],
 			"request": {
-				"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
+				"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -250,7 +250,7 @@
 				}
 			],
 			"request": {
-				"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627/star",
+				"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab/star",
 				"method": "PUT",
 				"header": [
 					{
@@ -272,7 +272,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"var new_gist_star = \"fca2f8918997c311f5aff8580ca45627\";",
+							"var new_gist_star = \"d7e7bc67663e8d493efa3b5509e894ab\";",
 							"tests[\"Added Star has been confirmed\"] = responseBody.has(new_gist_star);"
 						]
 					}
@@ -307,7 +307,7 @@
 				}
 			],
 			"request": {
-				"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627/star",
+				"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab/star",
 				"method": "DELETE",
 				"header": [
 					{
@@ -329,7 +329,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"var new_gist_star = \"fca2f8918997c311f5aff8580ca45627\";",
+							"var new_gist_star = \"d7e7bc67663e8d493efa3b5509e894ab\";",
 							"tests[\"Removed Star has been confirmed\"] = !(responseBody.has(new_gist_star));"
 						]
 					}
@@ -364,7 +364,7 @@
 				}
 			],
 			"request": {
-				"url": "https://api.github.com/gists/65001fdbb4233dc69ce4f25fa087a074",
+				"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
 				"method": "DELETE",
 				"header": [
 					{

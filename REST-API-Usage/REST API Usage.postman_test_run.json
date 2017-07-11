@@ -1,8 +1,8 @@
 {
-	"id": "8bb2e398-6d0a-4541-975b-aab5458ba8b9",
+	"id": "ee587bd0-f240-41ea-97d4-4e8b60f120a2",
 	"name": "REST API Usage",
 	"allTests": [],
-	"timestamp": "2017-07-04T23:20:40.906Z",
+	"timestamp": "2017-07-05T20:32:54.788Z",
 	"collection_id": "f30301ea-8f0e-2285-2b0d-ff8dc2fe57cd",
 	"folder_id": 0,
 	"target_type": "collection",
@@ -75,15 +75,15 @@
 				}
 			},
 			"times": [
-				"407"
+				"662"
 			],
 			"allTests": [
 				{
 					"Getting public Gists returns 30 Gists": true
 				}
 			],
-			"time": "407",
-			"totalRequestTime": "407",
+			"time": "662",
+			"totalRequestTime": "662",
 			"iterationResults": {}
 		},
 		{
@@ -109,15 +109,15 @@
 				}
 			},
 			"times": [
-				"151"
+				"129"
 			],
 			"allTests": [
 				{
 					"The user `wolfordj` has at least one public Gist": true
 				}
 			],
-			"time": "151",
-			"totalRequestTime": "151",
+			"time": "129",
+			"totalRequestTime": "129",
 			"iterationResults": {}
 		},
 		{
@@ -136,13 +136,13 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				"161"
+				"134"
 			],
 			"allTests": [
 				{}
 			],
-			"time": "161",
-			"totalRequestTime": "161",
+			"time": "134",
+			"totalRequestTime": "134",
 			"iterationResults": {}
 		},
 		{
@@ -168,15 +168,15 @@
 				}
 			},
 			"times": [
-				"1217"
+				"1188"
 			],
 			"allTests": [
 				{
 					"A Gist was created": true
 				}
 			],
-			"time": "1217",
-			"totalRequestTime": "1217",
+			"time": "1188",
+			"totalRequestTime": "1188",
 			"iterationResults": {}
 		},
 		{
@@ -202,15 +202,15 @@
 				}
 			},
 			"times": [
-				"150"
+				"141"
 			],
 			"allTests": [
 				{
 					"The Gist count for user 'joneric' has increased by 1": true
 				}
 			],
-			"time": "150",
-			"totalRequestTime": "150",
+			"time": "141",
+			"totalRequestTime": "141",
 			"iterationResults": {}
 		},
 		{
@@ -236,21 +236,21 @@
 				}
 			},
 			"times": [
-				"153"
+				"285"
 			],
 			"allTests": [
 				{
 					"The contents of the created Gist matchs the contents sent": true
 				}
 			],
-			"time": "153",
-			"totalRequestTime": "153",
+			"time": "285",
+			"totalRequestTime": "285",
 			"iterationResults": {}
 		},
 		{
 			"name": "gets original gist description",
 			"id": "926f062a-0c23-d871-9336-7d49d4ffa5ec",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
 			"totalTime": 0,
 			"responseCode": {
 				"code": 200,
@@ -270,21 +270,21 @@
 				}
 			},
 			"times": [
-				"145"
+				"160"
 			],
 			"allTests": [
 				{
 					"Edited Gist description: 'I created a Gist!'": true
 				}
 			],
-			"time": "145",
-			"totalRequestTime": "145",
+			"time": "160",
+			"totalRequestTime": "160",
 			"iterationResults": {}
 		},
 		{
 			"name": "updates gist description",
 			"id": "820e2ea0-6fce-a9aa-5791-89d3dbe0c8d8",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
 			"totalTime": 0,
 			"responseCode": {
 				"code": 200,
@@ -304,21 +304,21 @@
 				}
 			},
 			"times": [
-				"329"
+				"172"
 			],
 			"allTests": [
 				{
 					"Edit of Gist worked": true
 				}
 			],
-			"time": "329",
-			"totalRequestTime": "329",
+			"time": "172",
+			"totalRequestTime": "172",
 			"iterationResults": {}
 		},
 		{
 			"name": "confirms gist description update",
 			"id": "5325bbf4-96d2-e29c-cc02-43f588317ccc",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
 			"totalTime": 0,
 			"responseCode": {
 				"code": 200,
@@ -338,21 +338,21 @@
 				}
 			},
 			"times": [
-				"353"
+				"172"
 			],
 			"allTests": [
 				{
 					"Edited Gist description: 'I changed the description of this gist'": true
 				}
 			],
-			"time": "353",
-			"totalRequestTime": "353",
+			"time": "172",
+			"totalRequestTime": "172",
 			"iterationResults": {}
 		},
 		{
 			"name": "add a star",
 			"id": "c973e340-73fe-a435-6355-364536ee28a0",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627/star",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab/star",
 			"totalTime": 0,
 			"responseCode": {
 				"code": 204,
@@ -372,15 +372,15 @@
 				}
 			},
 			"times": [
-				"154"
+				"156"
 			],
 			"allTests": [
 				{
 					"Added a star to a Gist": true
 				}
 			],
-			"time": "154",
-			"totalRequestTime": "154",
+			"time": "156",
+			"totalRequestTime": "156",
 			"iterationResults": {}
 		},
 		{
@@ -406,21 +406,21 @@
 				}
 			},
 			"times": [
-				"144"
+				"133"
 			],
 			"allTests": [
 				{
 					"Added Star has been confirmed": true
 				}
 			],
-			"time": "144",
-			"totalRequestTime": "144",
+			"time": "133",
+			"totalRequestTime": "133",
 			"iterationResults": {}
 		},
 		{
 			"name": "delete a star",
 			"id": "3d1eedcd-8e50-8295-e7c4-e749bc48750f",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627/star",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab/star",
 			"totalTime": 0,
 			"responseCode": {
 				"code": 204,
@@ -440,15 +440,15 @@
 				}
 			},
 			"times": [
-				"139"
+				"170"
 			],
 			"allTests": [
 				{
 					"Removed a star from a Gist": true
 				}
 			],
-			"time": "139",
-			"totalRequestTime": "139",
+			"time": "170",
+			"totalRequestTime": "170",
 			"iterationResults": {}
 		},
 		{
@@ -474,21 +474,21 @@
 				}
 			},
 			"times": [
-				"127"
+				"125"
 			],
 			"allTests": [
 				{
 					"Removed Star has been confirmed": true
 				}
 			],
-			"time": "127",
-			"totalRequestTime": "127",
+			"time": "125",
+			"totalRequestTime": "125",
 			"iterationResults": {}
 		},
 		{
 			"name": "delete a gist",
 			"id": "96e5631c-55fa-58fa-25a5-72d65618bf62",
-			"url": "https://api.github.com/gists/65001fdbb4233dc69ce4f25fa087a074",
+			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
 			"totalTime": 0,
 			"responseCode": {
 				"code": 204,
@@ -508,28 +508,28 @@
 				}
 			},
 			"times": [
-				"127"
+				"283"
 			],
 			"allTests": [
 				{
 					"A Gist was deleted": true
 				}
 			],
-			"time": "127",
-			"totalRequestTime": "127",
+			"time": "283",
+			"totalRequestTime": "283",
 			"iterationResults": {}
 		}
 	],
 	"totalPass": 13,
 	"totalFail": 0,
-	"totalTime": 3757,
+	"totalTime": 3910,
 	"lifecycle": "done",
 	"requests": [
 		{
 			"name": "gets all public gists",
 			"id": "51f20671-99d2-7761-595f-92d7a522b4e1",
 			"url": "https://api.github.com/gists/public",
-			"time": "2017-07-04T23:20:40.906Z",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -549,7 +549,7 @@
 			"name": "gets wolford gists",
 			"id": "38d4e293-84c7-0bbc-b7ba-df01dcc108df",
 			"url": "https://api.github.com/users/wolfordj/gists",
-			"time": "2017-07-04T23:20:40.906Z",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -569,7 +569,7 @@
 			"name": "get joneric gists",
 			"id": "cddfedc3-3e6f-ae0f-b4a6-8a2fe1645c3f",
 			"url": "https://api.github.com/users/joneric/gists",
-			"time": "2017-07-04T23:20:40.906Z",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -584,7 +584,7 @@
 			"name": "add gist to joneric",
 			"id": "071cfb3d-cf14-ac5b-c717-c736045bb95a",
 			"url": "https://api.github.com/gists",
-			"time": "2017-07-04T23:20:40.906Z",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 201,
 				"name": "Created",
@@ -604,7 +604,7 @@
 			"name": "confirm gist count increased",
 			"id": "3ac300fb-bdd1-dcdd-70df-6fe187fbf67b",
 			"url": "https://api.github.com/users/joneric/gists",
-			"time": "2017-07-04T23:20:40.906Z",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -624,7 +624,7 @@
 			"name": "confirms contents of added gist",
 			"id": "16017104-c098-e593-b486-695b89b24967",
 			"url": "https://api.github.com/users/joneric/gists",
-			"time": "2017-07-04T23:20:40.906Z",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -643,8 +643,8 @@
 		{
 			"name": "gets original gist description",
 			"id": "926f062a-0c23-d871-9336-7d49d4ffa5ec",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
-			"time": "2017-07-04T23:20:40.906Z",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -663,8 +663,8 @@
 		{
 			"name": "updates gist description",
 			"id": "820e2ea0-6fce-a9aa-5791-89d3dbe0c8d8",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
-			"time": "2017-07-04T23:20:40.906Z",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -683,8 +683,8 @@
 		{
 			"name": "confirms gist description update",
 			"id": "5325bbf4-96d2-e29c-cc02-43f588317ccc",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
-			"time": "2017-07-04T23:20:40.906Z",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -703,8 +703,8 @@
 		{
 			"name": "add a star",
 			"id": "c973e340-73fe-a435-6355-364536ee28a0",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627/star",
-			"time": "2017-07-04T23:20:40.906Z",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab/star",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 204,
 				"name": "No Content",
@@ -724,7 +724,7 @@
 			"name": "check if start was added",
 			"id": "76eafcc5-03c9-7743-8abf-9dfe01d01283",
 			"url": "https://api.github.com/gists/starred",
-			"time": "2017-07-04T23:20:40.906Z",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -743,8 +743,8 @@
 		{
 			"name": "delete a star",
 			"id": "3d1eedcd-8e50-8295-e7c4-e749bc48750f",
-			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627/star",
-			"time": "2017-07-04T23:20:40.906Z",
+			"url": "https://api.github.com/gists/d7e7bc67663e8d493efa3b5509e894ab/star",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 204,
 				"name": "No Content",
@@ -764,7 +764,7 @@
 			"name": "check if star was deleted",
 			"id": "fb1a7086-e20a-c997-9b90-3e9c862608d4",
 			"url": "https://api.github.com/gists/starred",
-			"time": "2017-07-04T23:20:40.906Z",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 200,
 				"name": "OK",
@@ -783,8 +783,8 @@
 		{
 			"name": "delete a gist",
 			"id": "96e5631c-55fa-58fa-25a5-72d65618bf62",
-			"url": "https://api.github.com/gists/65001fdbb4233dc69ce4f25fa087a074",
-			"time": "2017-07-04T23:20:40.906Z",
+			"url": "https://api.github.com/gists/fca2f8918997c311f5aff8580ca45627",
+			"time": "2017-07-05T20:32:54.788Z",
 			"responseCode": {
 				"code": 204,
 				"name": "No Content",
