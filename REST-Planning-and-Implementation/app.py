@@ -152,18 +152,18 @@ class SlipHandler(webapp2.RequestHandler):
         post_slip_data = json.loads(self.request.body)
         post_slip_query_results = [post_slip_query.to_dict()
                                   for post_slip_query in Slip.query()]
-        in_use = False
-        for slip in post_slip_query_results:
-            if slip['number'] == post_slip_data['number']:
-                in_use = True
-                self.response.status = 403
-                self.response.write("ERROR: slip number already in use")
-        if not in_use:
-            input_number = False
-            for item in post_slip_data:
-                if item == "number":
-                    input_number = True
-            if input_number:
+        input_number = False
+        for item in post_slip_data:
+            if item == "number":
+                input_number = True
+        if input_number:
+            in_use = False
+            for slip in post_slip_query_results:
+                if slip['number'] == post_slip_data['number']:
+                    in_use = True
+                    self.response.status = 403
+                    self.response.write("ERROR: slip number already in use")
+            if not in_use:
                 post_slip = Slip(number=post_slip_data['number'])
                 post_slip.current_boat = ""
                 post_slip.arrival_date = ""
@@ -173,9 +173,9 @@ class SlipHandler(webapp2.RequestHandler):
                 post_slip_dict = post_slip.to_dict()
                 post_slip_dict['self'] = '/slips/' + post_slip.key.urlsafe()
                 self.response.write(json.dumps(post_slip_dict))
-            else:
-                self.response.status = 400
-                self.response.write("ERROR: expected format -> {\"number\": int}")
+        else:
+            self.response.status = 400
+            self.response.write("ERROR: expected format -> {\"number\": int}")
 
     def get(self, id=None):
         if id:
@@ -206,10 +206,11 @@ class SlipHandler(webapp2.RequestHandler):
                     slip_exists = True
             if slip_exists:
                 delete_slip = ndb.Key(urlsafe=id).get()
-                boat_in_the_slip = ndb.Key(urlsafe=delete_slip.current_boat).get()
+                if delete_slip.current_boat != "":
+                    boat_in_the_slip = ndb.Key(urlsafe=delete_slip.current_boat).get()
+                    boat_in_the_slip.at_sea = True;
+                    boat_in_the_slip.put()
                 delete_slip.key.delete()
-                boat_in_the_slip.at_sea = True;
-                boat_in_the_slip.put()
                 self.response.write("SUCCESS: slip was deleted")
             else:
                 self.response.status = 400
@@ -324,7 +325,7 @@ class BoatInSlipHandler(webapp2.RequestHandler):
                     slip_exists = True
             if slip_exists:
                 slip = ndb.Key(urlsafe=id).get()
-                if slip.current_boat != "":
+                if slip.current_boat:
                     boat_in_slip = ndb.Key(urlsafe=slip.current_boat).get()
                     boat_in_slip.at_sea = True
                     boat_in_slip.put()
