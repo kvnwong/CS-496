@@ -34,6 +34,7 @@ class BoatHandler(webapp2.RequestHandler):
             post_boat_dict['self'] = '/boats/' + post_boat.key.urlsafe()
             self.response.write(json.dumps(post_boat_dict))
         else:
+            self.response.status = 400
             self.response.write("ERROR: expected format -> {\"name\": \"str\", \"length\": int, \"type\": \"str\"}")
 
 
@@ -49,6 +50,7 @@ class BoatHandler(webapp2.RequestHandler):
                 get_boat_dict['self'] = "/boats/" + id
                 self.response.write(json.dumps(get_boat_dict))
             else:
+                self.response.status = 400
                 self.response.write("ERROR: boat does not exist")
         else:
             get_boat_query_results = [get_boat_query.to_dict()
@@ -71,6 +73,7 @@ class BoatHandler(webapp2.RequestHandler):
                 ndb.Key(urlsafe=id).delete()
                 self.response.write("SUCCESS: boat was deleted")
             else:
+                self.response.status = 400
                 self.response.write("ERROR: boat does not exist")
 
     def patch(self, id=None):
@@ -83,6 +86,7 @@ class BoatHandler(webapp2.RequestHandler):
             if boat_exists:
                 patch_boat = ndb.Key(urlsafe=id).get()
                 if len(patch_boat_data) > 1:
+                    self.response.status = 400
                     self.response.write("ERROR: expected format -> {\"name\": \"str\"} or {\"length\": int} or {\"type\": \"str\"}")
                 else:
                     for key in patch_boat_data:
@@ -99,8 +103,10 @@ class BoatHandler(webapp2.RequestHandler):
                             patch_boat.put()
                             self.response.write("SUCCESS: boat 'length' was updated")
                         else:
+                            self.response.status = 400
                             self.response.write("ERROR: expected format -> {\"name\": \"str\"} or {\"length\": int} or {\"type\": \"str\"}")
             else:
+                self.response.status = 400
                 self.response.write("ERROR: boat does not exist")
 
     def put(self, id=None):
@@ -129,8 +135,10 @@ class BoatHandler(webapp2.RequestHandler):
                     put_boat.put()
                     self.response.write("SUCCESS: boat 'name', 'type', and 'length' were updated")
                 else:
+                    self.response.status = 400
                     self.response.write("ERROR: expected format -> {\"name\": \"str\", \"length\": int, \"type\": \"str\"}")
             else:
+                self.response.status = 400
                 self.response.write("ERROR: boat does not exist")
 
 class Slip(ndb.Model):
@@ -148,6 +156,7 @@ class SlipHandler(webapp2.RequestHandler):
         for slip in post_slip_query_results:
             if slip['number'] == post_slip_data['number']:
                 in_use = True
+                self.response.status = 403
                 self.response.write("ERROR: slip number already in use")
         if not in_use:
             input_number = False
@@ -165,6 +174,7 @@ class SlipHandler(webapp2.RequestHandler):
                 post_slip_dict['self'] = '/slips/' + post_slip.key.urlsafe()
                 self.response.write(json.dumps(post_slip_dict))
             else:
+                self.response.status = 400
                 self.response.write("ERROR: expected format -> {\"number\": int}")
 
     def get(self, id=None):
@@ -179,6 +189,7 @@ class SlipHandler(webapp2.RequestHandler):
                 get_slip_dict['self'] = "/slips/" + id
                 self.response.write(json.dumps(get_slip_dict))
             else:
+                self.response.status = 400
                 self.response.write("ERROR: slip does not exist")
         else:
             get_slip_query_results = [get_slip_query.to_dict()
@@ -201,6 +212,7 @@ class SlipHandler(webapp2.RequestHandler):
                 boat_in_the_slip.put()
                 self.response.write("SUCCESS: slip was deleted")
             else:
+                self.response.status = 400
                 self.response.write("ERROR: slip does not exist")
 
     def patch(self, id=None):
@@ -213,6 +225,7 @@ class SlipHandler(webapp2.RequestHandler):
             if slip_exists:
                 patch_slip = ndb.Key(urlsafe=id).get()
                 if len(patch_slip_data) > 1:
+                    self.response.status = 400
                     self.response.write("ERROR: expected format -> {\"number\": int}")
                 else:
                     for key in patch_slip_data:
@@ -223,14 +236,17 @@ class SlipHandler(webapp2.RequestHandler):
                             for slip in patch_slip_query_results:
                                 if slip['number'] == patch_slip_data['number']:
                                     found_it = True
+                                    self.response.status = 403
                                     self.response.write("ERROR: slip number already in use")
                             if not found_it:
                                 patch_slip.number = patch_slip_data['number']
                                 patch_slip.put()
                                 self.response.write("SUCCESS: slip 'number' was updated")
                         else:
+                            self.response.status = 400
                             self.response.write("ERROR: expected format -> {\"number\": int}")
             else:
+                self.response.status = 400
                 self.response.write("ERROR: slip does not exist")
 
 class BoatInSlipHandler(webapp2.RequestHandler):
@@ -250,6 +266,7 @@ class BoatInSlipHandler(webapp2.RequestHandler):
                     boat_dict['self'] = "/boats/" + get_slip.current_boat
                     self.response.write(json.dumps(boat_dict))
             else:
+                self.response.status = 400
                 self.response.write("ERROR: slip does not exist")
 
     def put(self, id=None):
@@ -284,14 +301,19 @@ class BoatInSlipHandler(webapp2.RequestHandler):
                                 put_boat.put()
                                 self.response.write("SUCCESS: boat was added to slip")
                             else:
+                                self.response.status = 403
                                 self.response.write("ERROR: slip is already occupied")
                         else:
+                            self.response.status = 403
                             self.response.write("ERROR: boat already in a slip")
                     else:
+                        self.response.status = 400
                         self.response.write("ERROR: boat does not exist")
                 else:
+                    self.response.status = 400
                     self.response.write("ERROR: expected format -> {\"current_boat\": \"boat_id\", \"arrival_date\": \"YYYY-MM-DD\"}")
             else:
+                self.response.status = 400
                 self.response.write("ERROR: slip does not exist")
 
     def delete(self, id=None):
@@ -311,8 +333,10 @@ class BoatInSlipHandler(webapp2.RequestHandler):
                     slip.put()
                     self.response.write("SUCCESS: boat was removed from slip")
                 else:
+                    self.response.status = 403
                     self.response.write("ERROR: no boat in slip")
             else:
+                self.response.status = 400
                 self.response.write("ERROR: slip does not exist")
 
 class MainPage(webapp2.RequestHandler):
