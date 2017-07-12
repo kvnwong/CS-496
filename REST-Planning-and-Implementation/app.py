@@ -7,95 +7,129 @@ class Boat(ndb.Model):
     name = ndb.StringProperty(required=True)
     type = ndb.StringProperty(required=True)
     length = ndb.IntegerProperty(required=True)
-    at_sea = ndb.BooleanProperty(required=True)
+    at_sea = ndb.BooleanProperty()
 
 class BoatHandler(webapp2.RequestHandler):
     def post(self):
         post_data = json.loads(self.request.body)
-        post_boat = Boat(name=post_data['name'],
-                    type=post_data['type'],
-                    length=post_data['length'],
-                    at_sea=post_data['at_sea'])
-
-        if not post_boat.at_sea:
+        input_name = False
+        input_type = False
+        input_length = False
+        for item in post_data:
+            if item == "name":
+                input_name = True
+            elif item == "type":
+                input_type = True
+            elif item == "length":
+                input_length = True
+        if input_name and input_type and input_length:
+            post_boat = Boat(name=post_data['name'],
+                             type=post_data['type'],
+                             length=post_data['length'])
             post_boat.at_sea = True
+            post_boat.put()
+            post_boat.id = str(post_boat.key.urlsafe())
+            post_boat.put()
+            post_boat_dict = post_boat.to_dict()
+            post_boat_dict['self'] = '/boats/' + post_boat.key.urlsafe()
+            self.response.write(json.dumps(post_boat_dict))
+        else:
+            self.response.write("ERROR: expected format -> {\"name\": \"str\", \"length\": int, \"type\": \"str\"}")
 
-        post_boat.put()
-        post_boat.id = str(post_boat.key.urlsafe())
-        post_boat.put()
-        post_boat_dict = post_boat.to_dict()
-        post_boat_dict['self'] = '/boats/' + post_boat.key.urlsafe()
-        self.response.write(json.dumps(post_boat_dict))
 
     def get(self, id=None):
         if id:
-            get_boat = ndb.Key(urlsafe=id).get()
-            get_boat_dict = get_boat.to_dict()
-            get_boat_dict['self'] = "/boats/" + id
-            self.response.write(json.dumps(get_boat_dict))
+            boat_exists = False
+            for boat in Boat.query():
+                if boat.id == id:
+                    boat_exists = True
+            if boat_exists:
+                get_boat = ndb.Key(urlsafe=id).get()
+                get_boat_dict = get_boat.to_dict()
+                get_boat_dict['self'] = "/boats/" + id
+                self.response.write(json.dumps(get_boat_dict))
+            else:
+                self.response.write("ERROR: boat does not exist")
         else:
             get_boat_query_results = [get_boat_query.to_dict()
                                       for get_boat_query in Boat.query()]
-
-            for single_boat in get_boat_query_results:
-                single_boat['self'] = "/boats/" + str(single_boat['id'])
-
+            for boat in get_boat_query_results:
+                boat['self'] = "/boats/" + str(boat['id'])
             self.response.write(json.dumps(get_boat_query_results))
 
     def delete(self, id=None):
         if id:
-            for slip in Slip.query(Slip.current_boat == id):
-                slip.current_boat = ""
-                slip.arrival_date = ""
-                slip.put()
-
-            ndb.Key(urlsafe=id).delete()
-            self.response.write("boat was deleted")
+            boat_exists = False
+            for boat in Boat.query():
+                if boat.id == id:
+                    boat_exists = True
+            if boat_exists:
+                for slip in Slip.query(Slip.current_boat == id):
+                    slip.current_boat = ""
+                    slip.arrival_date = ""
+                    slip.put()
+                ndb.Key(urlsafe=id).delete()
+                self.response.write("SUCCESS: boat was deleted")
+            else:
+                self.response.write("ERROR: boat does not exist")
 
     def patch(self, id=None):
         if id:
             patch_boat_data = json.loads(self.request.body)
-            patch_boat = ndb.Key(urlsafe=id).get()
-
-            if len(patch_boat_data) > 1:
-                self.response.write("can only change one item per PATCH")
+            boat_exists = False
+            for boat in Boat.query():
+                if boat.id == id:
+                    boat_exists = True
+            if boat_exists:
+                patch_boat = ndb.Key(urlsafe=id).get()
+                if len(patch_boat_data) > 1:
+                    self.response.write("ERROR: too many arguments")
+                else:
+                    for key in patch_boat_data:
+                        if key == "name":
+                            patch_boat.name = patch_boat_data['name']
+                            self.response.write("SUCCESS: boat 'name' was updated")
+                        elif key == "type":
+                            patch_boat.type = patch_boat_data['type']
+                            self.response.write("SUCCESS: boat 'type' was updated")
+                        elif key == "length":
+                            patch_boat.length = patch_boat_data['length']
+                            self.response.write("SUCCESS: boat 'length' was updated")
+                        else:
+                            self.response.write("ERROR: boat 'name', 'type' and 'length' can only be edited")
+                    patch_boat.put()
             else:
-                for key in patch_boat_data:
-                    if key == "name":
-                        patch_boat.name = patch_boat_data['name']
-                        self.response.write("boat name was updated")
-                    elif key == "type":
-                        patch_boat.type = patch_boat_data['type']
-                        self.response.write("boat type was updated")
-                    elif key == "length":
-                        patch_boat.length = patch_boat_data['length']
-                        self.response.write("boat length was updated")
-                    else:
-                        self.response.write("boat name, type and length can only be edited by via PATCH")
-                patch_boat.put()
+                self.response.write("ERROR: boat does not exist")
 
     def put(self, id=None):
         if id:
             put_boat_data = json.loads(self.request.body)
-            put_boat = ndb.Key(urlsafe=id).get()
-            input_name = False
-            input_type = False
-            input_length = False
-            for item in put_boat_data:
-                if item == "name":
-                    input_name = True
-                elif item == "type":
-                    input_type = True
-                elif item == "length":
-                    input_length = True
-            if input_name and input_type and input_length:
-                put_boat.name = put_boat_data['name']
-                put_boat.type = put_boat_data['type']
-                put_boat.length = put_boat_data['length']
-                put_boat.put()
-                self.response.write("boat was updated")
+            boat_exists = False
+            for boat in Boat.query():
+                if boat.id == id:
+                    boat_exists = True
+            if boat_exists:
+                put_boat = ndb.Key(urlsafe=id).get()
+                input_name = False
+                input_type = False
+                input_length = False
+                for item in put_boat_data:
+                    if item == "name":
+                        input_name = True
+                    elif item == "type":
+                        input_type = True
+                    elif item == "length":
+                        input_length = True
+                if input_name and input_type and input_length:
+                    put_boat.name = put_boat_data['name']
+                    put_boat.type = put_boat_data['type']
+                    put_boat.length = put_boat_data['length']
+                    put_boat.put()
+                    self.response.write("SUCCESS: boat 'name', 'type', and 'length' were updated")
+                else:
+                    self.response.write("ERROR: boat 'name', 'type' and 'length' can only be edited")
             else:
-                self.response.write("bad data: name, type and length should be in PUT body")
+                self.response.write("ERROR: boat does not exist")
 
 class Slip(ndb.Model):
     id = ndb.StringProperty()
@@ -214,6 +248,7 @@ class BoatInSlipHandler(webapp2.RequestHandler):
                         put_boat.put()
                         self.response.write("boat was added to slip")
                     else:
+                        self.response.write("Error 403 Forbidden\n")
                         self.response.write("slip is already occupied")
                 else:
                     self.response.write("bad data: current_boat and arrival_date should be in PUT body")
