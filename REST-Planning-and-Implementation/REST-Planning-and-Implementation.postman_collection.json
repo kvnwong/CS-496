@@ -1,0 +1,1240 @@
+{
+	"variables": [],
+	"info": {
+		"name": "REST Planning and Implementation",
+		"_postman_id": "233a1c94-066e-0b17-1cb1-3ae97b395387",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: new slip was created\"] = responseBody.has(\"id\") && responseBody.has(\"number\") && responseBody.has(\"current_boat\") && responseBody.has(\"arrival_date\") && responseBody.has(\"self\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"number\": 9}"
+				},
+				"description": "Create new slip"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new slip - bad body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad body\"] = responseBody.has(\"ERROR: expected format -> {\\\"number\\\": int}\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"wrongid\"}"
+				},
+				"description": "Create new slip"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new slip - bad slip number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad slip number\"] = responseBody.has(\"ERROR: slip number already in use\") && responseCode.code === 403;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"number\": 3}"
+				},
+				"description": "Create new slip"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all slips",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"var counter = Object.keys(data).length;",
+							"tests[\"SUCCESS: all slips returned\"] = counter == 6"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: single slip returned\"] = responseBody.has(\"id\") && responseBody.has(\"number\") && responseBody.has(\"current_boat\") && responseBody.has(\"arrival_date\") && responseBody.has(\"self\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single slip - bad slip id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad slip id\"] = responseBody.has(\"ERROR: slip does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCA",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: slip 'number' was updated\"] = responseBody.has(\"SUCCESS: slip 'number' was updated\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"number\": 12}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch slip - bad slip number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad slip number\"] = responseBody.has(\"ERROR: slip number already in use\") && responseCode.code === 403;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"number\": 3}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch slip - bad body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad body\"] = responseBody.has(\"ERROR: expected format -> {\\\"number\\\": int}\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"number\": 5, \"id\": \"wrongid\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch slip - bad body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad body\"] = responseBody.has(\"ERROR: expected format -> {\\\"number\\\": int}\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"wrongid\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch slip - bad slip id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad slip id\"] = responseBody.has(\"ERROR: slip does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCA",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"number\": 5}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create new boat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: new boat was created\"] = responseBody.has(\"id\") && responseBody.has(\"name\") && responseBody.has(\"length\") && responseBody.has(\"type\")  && responseBody.has(\"at_sea\") && responseBody.has(\"self\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"asdfsfdfd\", \"length\": 43, \"type\": \"raft\"}"
+				},
+				"description": "Create new boat"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new boat - bad body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad body\"] = responseBody.has(\"ERROR: expected format -> {\\\"name\\\": \\\"str\\\", \\\"length\\\": int, \\\"type\\\": \\\"str\\\"}\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"badid\", \"length\": 44, \"type\": \"jetboat\"}"
+				},
+				"description": "Create new boat"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all boats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"var counter = Object.keys(data).length;",
+							"tests[\"SUCCESS: all boats returned\"] = counter == 6"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single boat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: single boat returned\"] = responseBody.has(\"id\") && responseBody.has(\"name\") && responseBody.has(\"length\") && responseBody.has(\"type\")  && responseBody.has(\"at_sea\") && responseBody.has(\"self\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single boat - bad boat id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad boat id\"] = responseBody.has(\"ERROR: boat does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch boat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat 'name' was updated\"] = responseBody.has(\"SUCCESS: boat 'name' was updated\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"crazy\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch boat - bad body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad body\"] = responseBody.has(\"ERROR: expected format -> {\\\"name\\\": \\\"str\\\"} or {\\\"length\\\": int} or {\\\"type\\\": \\\"str\\\"}\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"crazy\", \"length\": 43}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch boat - bad body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad body\"] = responseBody.has(\"ERROR: expected format -> {\\\"name\\\": \\\"str\\\"} or {\\\"length\\\": int} or {\\\"type\\\": \\\"str\\\"}\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"badid\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch boat - bad boat id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad boat id\"] = responseBody.has(\"ERROR: boat does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"crazy\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat 'name', 'type', and 'length' were updated\"] = responseBody.has(\"SUCCESS: boat 'name', 'type', and 'length' were updated\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"friday\", \"length\": 15, \"type\": \"skipper\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat - bad body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad body\"] = responseBody.has(\"ERROR: expected format -> {\\\"name\\\": \\\"str\\\", \\\"length\\\": int, \\\"type\\\": \\\"str\\\"}\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"badid\", \"length\": 15, \"type\": \"skipper\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat - bad boat id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad boat id\"] = responseBody.has(\"ERROR: boat does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"friday\", \"length\": 15, \"type\": \"skipper\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat in slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat was brought in from sea and added to slip\"] = responseBody.has(\"SUCCESS: boat was brought in from sea and added to slip\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw\", \"arrival_date\": \"2017-09-08\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat in slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat was brought in from sea and added to slip\"] = responseBody.has(\"SUCCESS: boat was brought in from sea and added to slip\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgIDKCAw/boat",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDyCAw\", \"arrival_date\": \"2017-10-07\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat in slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat was brought in from sea and added to slip\"] = responseBody.has(\"SUCCESS: boat was brought in from sea and added to slip\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICKCgw/boat",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCQw\", \"arrival_date\": \"2017-02-07\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat in slip - bad body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad body\"] = responseBody.has(\"ERROR: expected format -> {\\\"current_boat\\\": \\\"boat_id\\\", \\\"arrival_date\\\": \\\"YYYY-MM-DD\\\"}\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDyCgw\", \"arrival_date\": \"2017-02-07\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat in slip - bad slip id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad slip id\"] = responseBody.has(\"ERROR: slip does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDyC/boat",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDyCgw\", \"arrival_date\": \"2017-02-07\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat in slip - bad boat id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad boat id\"] = responseBody.has(\"ERROR: boat does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDyCg\", \"arrival_date\": \"2017-02-07\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat in slip - occupied slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, slip already occupied\"] = responseBody.has(\"ERROR: slip is already occupied\") && responseCode.code === 403;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDyCgw\", \"arrival_date\": \"2017-02-07\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put boat in slip - boat already in slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, boat already in a slip\"] = responseBody.has(\"ERROR: boat already in a slip\") && responseCode.code === 403;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw\", \"arrival_date\": \"2017-02-07\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get boat in slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat in slip returned\"] = responseBody.has(\"id\") && responseBody.has(\"name\") && responseBody.has(\"length\") && responseBody.has(\"type\")  && responseBody.has(\"at_sea\") && responseBody.has(\"self\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDUCAw\", \"arrival_date\": \"2017-09-08\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get boat in slip - empty slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, no boat in slip\"] = responseBody.has(\"SUCCESS: no boat in slip\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDUCAw\", \"arrival_date\": \"2017-09-08\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get boat in slip - bad slip id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad slip id\"] = responseBody.has(\"ERROR: slip does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgIgICsCg/boat",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"current_boat\": \"aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDUCAw\", \"arrival_date\": \"2017-09-08\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete boat in slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat was removed from slip and sent out to sea\"] = responseBody.has(\"SUCCESS: boat was removed from slip and sent out to sea\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete boat in slip - no boat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, no boat in slip\"] = responseBody.has(\"ERROR: no boat in slip\") && responseCode.code === 403;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete boat in slip - bad slip id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad slip id\"] = responseBody.has(\"ERROR: slip does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCg/boat",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: slip deleted\"] = responseBody.has(\"SUCCESS: slip was deleted\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete slip - send boat to sea",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: slip was deleted and boat sent out to sea\"] = responseBody.has(\"SUCCESS: slip was deleted and boat sent out to sea\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgIDKCAw",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete slip - bad slip id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad slip id\"] = responseBody.has(\"ERROR: slip does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyC",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete boat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat was deleted\"] = responseBody.has(\"SUCCESS: boat was deleted\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCww",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete boat - empty slip",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: boat was deleted and slip emptied\"] = responseBody.has(\"SUCCESS: boat was deleted and slip emptied\") && responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCQw",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete boat - bad boat id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"SUCCESS: error caught, bad boat id\"] = responseBody.has(\"ERROR: boat does not exist\") && responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKC",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

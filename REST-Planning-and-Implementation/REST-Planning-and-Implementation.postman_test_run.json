@@ -1,0 +1,2414 @@
+{
+	"id": "c2176946-f510-4c46-a29d-7e43c53167a8",
+	"name": "REST Planning and Implementation",
+	"allTests": [],
+	"timestamp": "2017-07-13T02:36:51.075Z",
+	"collection_id": "233a1c94-066e-0b17-1cb1-3ae97b395387",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "no-environment",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "233a1c94-066e-0b17-1cb1-3ae97b395387",
+		"name": "REST Planning and Implementation",
+		"description": "",
+		"order": [
+			"c8b32a0d-2a5e-3343-5260-b60c0ada0eae",
+			"f3f30bda-c454-8ced-94cd-02e2583babde",
+			"70fd3c58-d142-a36a-1f7e-654566efee65",
+			"5216b437-cd1d-ba3a-522c-bce1f1d41f01",
+			"91212ecd-1f70-f59b-589c-bd9e6a1768d2",
+			"c7828129-55e8-a134-5e40-36b69b07ea0b",
+			"69d9923f-baee-58e7-2764-2bb9c20699df",
+			"9d625f8e-da27-6f4b-de89-f0dfb7569013",
+			"aeac3eca-0e67-b258-b2de-c6adf6d0e07a",
+			"f441976d-9e09-6dea-e540-8d6b05a7ae12",
+			"ec8a55e8-a0c9-3ca8-e2c8-7d3c10f97261",
+			"2f4a04a8-dbc5-b28f-99db-73fad724f586",
+			"e1dc3373-8e05-6893-73e0-224ff3dfd472",
+			"bd9dd158-2978-efc2-e249-311a0d523702",
+			"f1fe6455-231a-40b9-3e8f-dac8acc575fe",
+			"fca12a86-df4d-65be-47f5-76e63adaa8f1",
+			"0898814b-d4e2-f57f-1851-55f473575054",
+			"883401d9-8262-131a-a58a-c72cc6414a33",
+			"5bd633a0-c94f-9e8e-eb1e-19723f012051",
+			"728e3c9b-25dc-e0d8-d367-f398b9d4d9f8",
+			"c2eec045-40d7-a966-5571-c53db0ebea4a",
+			"53ec2485-5b5c-ba73-a9d0-b6d90a5b7af6",
+			"a7bf5436-5f51-854a-4e02-29d452d7ac4e",
+			"0d804fbb-20f6-18e9-f7cf-3e18e38cb61f",
+			"183e8386-dff7-fb13-dd79-e7e24f98e47c",
+			"5c4f2388-92ff-4869-a018-c2a0b3cff2ac",
+			"a2a17021-0123-e77b-339a-0bd2635a9c24",
+			"d76ca983-2124-d8a4-cc4a-fa64c9d31c20",
+			"c4da4305-a26d-3e58-5d51-e24a08390a23",
+			"91a18f5a-a46e-c41d-8886-74c2618fc082",
+			"7ed83706-82a9-60e4-594e-1ca5db853721",
+			"0985d521-6468-b6f0-1520-dfedbdc701b4",
+			"756b0c96-77d1-8093-e725-2b1d79d64427",
+			"f3b49cef-d37a-82dc-2dc7-87914ef706cb",
+			"cd5194a4-b9f8-eb81-69e4-8fc58de4d539",
+			"2020ef91-bcb4-2dfb-a65b-01fdc56e8c7b",
+			"90b24eab-8e4c-51e2-9ab3-2194d48894dd",
+			"2a9ff85d-77d0-fbe5-b9b5-06af857c47ab",
+			"a755596d-11e4-8637-cbd1-507f53ef7f0a",
+			"554694f6-2618-4257-77b5-f469993e1619",
+			"273df7d8-f9e1-2b9c-e496-07328fd9408b",
+			"ae9f66dd-a967-28af-b19c-cdb5a366c4eb",
+			"e3eb6f84-a0b0-f178-dcbd-8b80aacf6488"
+		],
+		"folders": [],
+		"timestamp": 1499879583482,
+		"synced": false,
+		"remote_id": 0,
+		"owner": "2340024",
+		"sharedWithTeam": false,
+		"subscribed": false,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"createdAt": 1499879583482,
+		"updatedAt": 1499906101894,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {}
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "Create new slip",
+			"id": "c8b32a0d-2a5e-3343-5260-b60c0ada0eae",
+			"url": "http://localhost:8080/slips",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: new slip was created": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: new slip was created": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"159"
+			],
+			"allTests": [
+				{
+					"SUCCESS: new slip was created": true
+				}
+			],
+			"time": "159",
+			"totalRequestTime": "159",
+			"iterationResults": {}
+		},
+		{
+			"name": "Create new slip - bad body",
+			"id": "f3f30bda-c454-8ced-94cd-02e2583babde",
+			"url": "http://localhost:8080/slips",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"45"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "45",
+			"totalRequestTime": "45",
+			"iterationResults": {}
+		},
+		{
+			"name": "Create new slip - bad slip number",
+			"id": "70fd3c58-d142-a36a-1f7e-654566efee65",
+			"url": "http://localhost:8080/slips",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad slip number": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip number": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"50"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad slip number": true
+				}
+			],
+			"time": "50",
+			"totalRequestTime": "50",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get all slips",
+			"id": "5216b437-cd1d-ba3a-522c-bce1f1d41f01",
+			"url": "http://localhost:8080/slips",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: all slips returned": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: all slips returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"46"
+			],
+			"allTests": [
+				{
+					"SUCCESS: all slips returned": true
+				}
+			],
+			"time": "46",
+			"totalRequestTime": "46",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get a single slip",
+			"id": "91212ecd-1f70-f59b-589c-bd9e6a1768d2",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: single slip returned": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: single slip returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"50"
+			],
+			"allTests": [
+				{
+					"SUCCESS: single slip returned": true
+				}
+			],
+			"time": "50",
+			"totalRequestTime": "50",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get a single slip - bad slip id",
+			"id": "c7828129-55e8-a134-5e40-36b69b07ea0b",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCA",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad slip id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"45"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad slip id": true
+				}
+			],
+			"time": "45",
+			"totalRequestTime": "45",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch slip",
+			"id": "69d9923f-baee-58e7-2764-2bb9c20699df",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: slip 'number' was updated": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: slip 'number' was updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"80"
+			],
+			"allTests": [
+				{
+					"SUCCESS: slip 'number' was updated": true
+				}
+			],
+			"time": "80",
+			"totalRequestTime": "80",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch slip - bad slip number",
+			"id": "9d625f8e-da27-6f4b-de89-f0dfb7569013",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad slip number": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip number": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"68"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad slip number": true
+				}
+			],
+			"time": "68",
+			"totalRequestTime": "68",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch slip - bad body",
+			"id": "aeac3eca-0e67-b258-b2de-c6adf6d0e07a",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"42"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "42",
+			"totalRequestTime": "42",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch slip - bad body",
+			"id": "f441976d-9e09-6dea-e540-8d6b05a7ae12",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"40"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "40",
+			"totalRequestTime": "40",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch slip - bad slip id",
+			"id": "ec8a55e8-a0c9-3ca8-e2c8-7d3c10f97261",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCA",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad slip id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"39"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad slip id": true
+				}
+			],
+			"time": "39",
+			"totalRequestTime": "39",
+			"iterationResults": {}
+		},
+		{
+			"name": "Create new boat",
+			"id": "2f4a04a8-dbc5-b28f-99db-73fad724f586",
+			"url": "http://localhost:8080/boats",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: new boat was created": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: new boat was created": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"70"
+			],
+			"allTests": [
+				{
+					"SUCCESS: new boat was created": true
+				}
+			],
+			"time": "70",
+			"totalRequestTime": "70",
+			"iterationResults": {}
+		},
+		{
+			"name": "Create new boat - bad body",
+			"id": "e1dc3373-8e05-6893-73e0-224ff3dfd472",
+			"url": "http://localhost:8080/boats",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"25"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "25",
+			"totalRequestTime": "25",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get all boats",
+			"id": "bd9dd158-2978-efc2-e249-311a0d523702",
+			"url": "http://localhost:8080/boats",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: all boats returned": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: all boats returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"49"
+			],
+			"allTests": [
+				{
+					"SUCCESS: all boats returned": true
+				}
+			],
+			"time": "49",
+			"totalRequestTime": "49",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get a single boat",
+			"id": "f1fe6455-231a-40b9-3e8f-dac8acc575fe",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: single boat returned": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: single boat returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"44"
+			],
+			"allTests": [
+				{
+					"SUCCESS: single boat returned": true
+				}
+			],
+			"time": "44",
+			"totalRequestTime": "44",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get a single boat - bad boat id",
+			"id": "fca12a86-df4d-65be-47f5-76e63adaa8f1",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad boat id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"54"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad boat id": true
+				}
+			],
+			"time": "54",
+			"totalRequestTime": "54",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch boat",
+			"id": "0898814b-d4e2-f57f-1851-55f473575054",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat 'name' was updated": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat 'name' was updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"54"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat 'name' was updated": true
+				}
+			],
+			"time": "54",
+			"totalRequestTime": "54",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch boat - bad body",
+			"id": "883401d9-8262-131a-a58a-c72cc6414a33",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"56"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "56",
+			"totalRequestTime": "56",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch boat - bad body",
+			"id": "5bd633a0-c94f-9e8e-eb1e-19723f012051",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"46"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "46",
+			"totalRequestTime": "46",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch boat - bad boat id",
+			"id": "728e3c9b-25dc-e0d8-d367-f398b9d4d9f8",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad boat id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"47"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad boat id": true
+				}
+			],
+			"time": "47",
+			"totalRequestTime": "47",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat",
+			"id": "c2eec045-40d7-a966-5571-c53db0ebea4a",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat 'name', 'type', and 'length' were updated": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat 'name', 'type', and 'length' were updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"67"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat 'name', 'type', and 'length' were updated": true
+				}
+			],
+			"time": "67",
+			"totalRequestTime": "67",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat - bad body",
+			"id": "53ec2485-5b5c-ba73-a9d0-b6d90a5b7af6",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"45"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "45",
+			"totalRequestTime": "45",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat - bad boat id",
+			"id": "a7bf5436-5f51-854a-4e02-29d452d7ac4e",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad boat id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"47"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad boat id": true
+				}
+			],
+			"time": "47",
+			"totalRequestTime": "47",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat in slip",
+			"id": "0d804fbb-20f6-18e9-f7cf-3e18e38cb61f",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat was brought in from sea and added to slip": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was brought in from sea and added to slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"99"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat was brought in from sea and added to slip": true
+				}
+			],
+			"time": "99",
+			"totalRequestTime": "99",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat in slip",
+			"id": "183e8386-dff7-fb13-dd79-e7e24f98e47c",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgIDKCAw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat was brought in from sea and added to slip": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was brought in from sea and added to slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"124"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat was brought in from sea and added to slip": true
+				}
+			],
+			"time": "124",
+			"totalRequestTime": "124",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat in slip",
+			"id": "5c4f2388-92ff-4869-a018-c2a0b3cff2ac",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICKCgw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat was brought in from sea and added to slip": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was brought in from sea and added to slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"129"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat was brought in from sea and added to slip": true
+				}
+			],
+			"time": "129",
+			"totalRequestTime": "129",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat in slip - bad body",
+			"id": "a2a17021-0123-e77b-339a-0bd2635a9c24",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"45"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "45",
+			"totalRequestTime": "45",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat in slip - bad slip id",
+			"id": "d76ca983-2124-d8a4-cc4a-fa64c9d31c20",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDyC/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad slip id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"51"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad slip id": true
+				}
+			],
+			"time": "51",
+			"totalRequestTime": "51",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat in slip - bad boat id",
+			"id": "c4da4305-a26d-3e58-5d51-e24a08390a23",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad boat id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"69"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad boat id": true
+				}
+			],
+			"time": "69",
+			"totalRequestTime": "69",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat in slip - occupied slip",
+			"id": "91a18f5a-a46e-c41d-8886-74c2618fc082",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, slip already occupied": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, slip already occupied": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"69"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, slip already occupied": true
+				}
+			],
+			"time": "69",
+			"totalRequestTime": "69",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put boat in slip - boat already in slip",
+			"id": "7ed83706-82a9-60e4-594e-1ca5db853721",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, boat already in a slip": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, boat already in a slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"69"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, boat already in a slip": true
+				}
+			],
+			"time": "69",
+			"totalRequestTime": "69",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get boat in slip",
+			"id": "0985d521-6468-b6f0-1520-dfedbdc701b4",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat in slip returned": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat in slip returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"94"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat in slip returned": true
+				}
+			],
+			"time": "94",
+			"totalRequestTime": "94",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get boat in slip - empty slip",
+			"id": "756b0c96-77d1-8093-e725-2b1d79d64427",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, no boat in slip": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, no boat in slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"36"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, no boat in slip": true
+				}
+			],
+			"time": "36",
+			"totalRequestTime": "36",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get boat in slip - bad slip id",
+			"id": "f3b49cef-d37a-82dc-2dc7-87914ef706cb",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgIgICsCg/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad slip id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"63"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad slip id": true
+				}
+			],
+			"time": "63",
+			"totalRequestTime": "63",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete boat in slip",
+			"id": "cd5194a4-b9f8-eb81-69e4-8fc58de4d539",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat was removed from slip and sent out to sea": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was removed from slip and sent out to sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"88"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat was removed from slip and sent out to sea": true
+				}
+			],
+			"time": "88",
+			"totalRequestTime": "88",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete boat in slip - no boat",
+			"id": "2020ef91-bcb4-2dfb-a65b-01fdc56e8c7b",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, no boat in slip": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, no boat in slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"41"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, no boat in slip": true
+				}
+			],
+			"time": "41",
+			"totalRequestTime": "41",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete boat in slip - bad slip id",
+			"id": "90b24eab-8e4c-51e2-9ab3-2194d48894dd",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCg/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad slip id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"61"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad slip id": true
+				}
+			],
+			"time": "61",
+			"totalRequestTime": "61",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete slip",
+			"id": "2a9ff85d-77d0-fbe5-b9b5-06af857c47ab",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: slip deleted": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: slip deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"52"
+			],
+			"allTests": [
+				{
+					"SUCCESS: slip deleted": true
+				}
+			],
+			"time": "52",
+			"totalRequestTime": "52",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete slip - send boat to sea",
+			"id": "a755596d-11e4-8637-cbd1-507f53ef7f0a",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgIDKCAw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: slip was deleted and boat sent out to sea": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: slip was deleted and boat sent out to sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"102"
+			],
+			"allTests": [
+				{
+					"SUCCESS: slip was deleted and boat sent out to sea": true
+				}
+			],
+			"time": "102",
+			"totalRequestTime": "102",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete slip - bad slip id",
+			"id": "554694f6-2618-4257-77b5-f469993e1619",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyC",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad slip id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"56"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad slip id": true
+				}
+			],
+			"time": "56",
+			"totalRequestTime": "56",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete boat",
+			"id": "273df7d8-f9e1-2b9c-e496-07328fd9408b",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCww",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat was deleted": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"81"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat was deleted": true
+				}
+			],
+			"time": "81",
+			"totalRequestTime": "81",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete boat - empty slip",
+			"id": "ae9f66dd-a967-28af-b19c-cdb5a366c4eb",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCQw",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: boat was deleted and slip emptied": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was deleted and slip emptied": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"82"
+			],
+			"allTests": [
+				{
+					"SUCCESS: boat was deleted and slip emptied": true
+				}
+			],
+			"time": "82",
+			"totalRequestTime": "82",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete boat - bad boat id",
+			"id": "e3eb6f84-a0b0-f178-dcbd-8b80aacf6488",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKC",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad boat id": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"50"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad boat id": true
+				}
+			],
+			"time": "50",
+			"totalRequestTime": "50",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 43,
+	"totalFail": 0,
+	"totalTime": 2729,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Create new slip",
+			"id": "c8b32a0d-2a5e-3343-5260-b60c0ada0eae",
+			"url": "http://localhost:8080/slips",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: new slip was created": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Create new slip - bad body",
+			"id": "f3f30bda-c454-8ced-94cd-02e2583babde",
+			"url": "http://localhost:8080/slips",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Create new slip - bad slip number",
+			"id": "70fd3c58-d142-a36a-1f7e-654566efee65",
+			"url": "http://localhost:8080/slips",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip number": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get all slips",
+			"id": "5216b437-cd1d-ba3a-522c-bce1f1d41f01",
+			"url": "http://localhost:8080/slips",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: all slips returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get a single slip",
+			"id": "91212ecd-1f70-f59b-589c-bd9e6a1768d2",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: single slip returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get a single slip - bad slip id",
+			"id": "c7828129-55e8-a134-5e40-36b69b07ea0b",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCA",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch slip",
+			"id": "69d9923f-baee-58e7-2764-2bb9c20699df",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: slip 'number' was updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch slip - bad slip number",
+			"id": "9d625f8e-da27-6f4b-de89-f0dfb7569013",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip number": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch slip - bad body",
+			"id": "aeac3eca-0e67-b258-b2de-c6adf6d0e07a",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch slip - bad body",
+			"id": "f441976d-9e09-6dea-e540-8d6b05a7ae12",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch slip - bad slip id",
+			"id": "ec8a55e8-a0c9-3ca8-e2c8-7d3c10f97261",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCA",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Create new boat",
+			"id": "2f4a04a8-dbc5-b28f-99db-73fad724f586",
+			"url": "http://localhost:8080/boats",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: new boat was created": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Create new boat - bad body",
+			"id": "e1dc3373-8e05-6893-73e0-224ff3dfd472",
+			"url": "http://localhost:8080/boats",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get all boats",
+			"id": "bd9dd158-2978-efc2-e249-311a0d523702",
+			"url": "http://localhost:8080/boats",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: all boats returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get a single boat",
+			"id": "f1fe6455-231a-40b9-3e8f-dac8acc575fe",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: single boat returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get a single boat - bad boat id",
+			"id": "fca12a86-df4d-65be-47f5-76e63adaa8f1",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch boat",
+			"id": "0898814b-d4e2-f57f-1851-55f473575054",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat 'name' was updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch boat - bad body",
+			"id": "883401d9-8262-131a-a58a-c72cc6414a33",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch boat - bad body",
+			"id": "5bd633a0-c94f-9e8e-eb1e-19723f012051",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch boat - bad boat id",
+			"id": "728e3c9b-25dc-e0d8-d367-f398b9d4d9f8",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat",
+			"id": "c2eec045-40d7-a966-5571-c53db0ebea4a",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat 'name', 'type', and 'length' were updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat - bad body",
+			"id": "53ec2485-5b5c-ba73-a9d0-b6d90a5b7af6",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat - bad boat id",
+			"id": "a7bf5436-5f51-854a-4e02-29d452d7ac4e",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCA",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat in slip",
+			"id": "0d804fbb-20f6-18e9-f7cf-3e18e38cb61f",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was brought in from sea and added to slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat in slip",
+			"id": "183e8386-dff7-fb13-dd79-e7e24f98e47c",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgIDKCAw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was brought in from sea and added to slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat in slip",
+			"id": "5c4f2388-92ff-4869-a018-c2a0b3cff2ac",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICKCgw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was brought in from sea and added to slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat in slip - bad body",
+			"id": "a2a17021-0123-e77b-339a-0bd2635a9c24",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat in slip - bad slip id",
+			"id": "d76ca983-2124-d8a4-cc4a-fa64c9d31c20",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgIDyC/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat in slip - bad boat id",
+			"id": "c4da4305-a26d-3e58-5d51-e24a08390a23",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat in slip - occupied slip",
+			"id": "91a18f5a-a46e-c41d-8886-74c2618fc082",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, slip already occupied": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put boat in slip - boat already in slip",
+			"id": "7ed83706-82a9-60e4-594e-1ca5db853721",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, boat already in a slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get boat in slip",
+			"id": "0985d521-6468-b6f0-1520-dfedbdc701b4",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat in slip returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get boat in slip - empty slip",
+			"id": "756b0c96-77d1-8093-e725-2b1d79d64427",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, no boat in slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get boat in slip - bad slip id",
+			"id": "f3b49cef-d37a-82dc-2dc7-87914ef706cb",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgIgICsCg/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete boat in slip",
+			"id": "cd5194a4-b9f8-eb81-69e4-8fc58de4d539",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was removed from slip and sent out to sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete boat in slip - no boat",
+			"id": "2020ef91-bcb4-2dfb-a65b-01fdc56e8c7b",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCgw/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, no boat in slip": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete boat in slip - bad slip id",
+			"id": "90b24eab-8e4c-51e2-9ab3-2194d48894dd",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCg/boat",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete slip",
+			"id": "2a9ff85d-77d0-fbe5-b9b5-06af857c47ab",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: slip deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete slip - send boat to sea",
+			"id": "a755596d-11e4-8637-cbd1-507f53ef7f0a",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgIDKCAw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: slip was deleted and boat sent out to sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete slip - bad slip id",
+			"id": "554694f6-2618-4257-77b5-f469993e1619",
+			"url": "http://localhost:8080/slips/aghkZXZ-Tm9uZXIRCxIEU2xpcBiAgICAgICyC",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad slip id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete boat",
+			"id": "273df7d8-f9e1-2b9c-e496-07328fd9408b",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCww",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete boat - empty slip",
+			"id": "ae9f66dd-a967-28af-b19c-cdb5a366c4eb",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKCQw",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: boat was deleted and slip emptied": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete boat - bad boat id",
+			"id": "e3eb6f84-a0b0-f178-dcbd-8b80aacf6488",
+			"url": "http://localhost:8080/boats/aghkZXZ-Tm9uZXIRCxIEQm9hdBiAgICAgICKC",
+			"time": "2017-07-13T02:36:51.075Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad boat id": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}

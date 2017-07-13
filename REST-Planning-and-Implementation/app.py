@@ -66,12 +66,20 @@ class BoatHandler(webapp2.RequestHandler):
                 if boat.id == id:
                     boat_exists = True
             if boat_exists:
+                reset_slip = False
                 for slip in Slip.query(Slip.current_boat == id):
-                    slip.current_boat = ""
-                    slip.arrival_date = ""
-                    slip.put()
-                ndb.Key(urlsafe=id).delete()
-                self.response.write("SUCCESS: boat was deleted")
+                    if slip.current_boat and slip.arrival_date:
+                        slip.current_boat = ""
+                        slip.arrival_date = ""
+                        slip.put()
+                        reset_slip = True
+
+                if reset_slip:
+                    ndb.Key(urlsafe=id).delete()
+                    self.response.write("SUCCESS: boat was deleted and slip emptied")
+                else:
+                    ndb.Key(urlsafe=id).delete()
+                    self.response.write("SUCCESS: boat was deleted")
             else:
                 self.response.status = 400
                 self.response.write("ERROR: boat does not exist")
@@ -206,12 +214,15 @@ class SlipHandler(webapp2.RequestHandler):
                     slip_exists = True
             if slip_exists:
                 delete_slip = ndb.Key(urlsafe=id).get()
-                if delete_slip.current_boat != "":
+                if delete_slip.current_boat:
                     boat_in_the_slip = ndb.Key(urlsafe=delete_slip.current_boat).get()
                     boat_in_the_slip.at_sea = True;
                     boat_in_the_slip.put()
-                delete_slip.key.delete()
-                self.response.write("SUCCESS: slip was deleted")
+                    delete_slip.key.delete()
+                    self.response.write("SUCCESS: slip was deleted and boat sent out to sea")
+                else:
+                    delete_slip.key.delete()
+                    self.response.write("SUCCESS: slip was deleted")
             else:
                 self.response.status = 400
                 self.response.write("ERROR: slip does not exist")
@@ -300,7 +311,7 @@ class BoatInSlipHandler(webapp2.RequestHandler):
                                 put_slip.put()
                                 put_boat.at_sea = False
                                 put_boat.put()
-                                self.response.write("SUCCESS: boat was added to slip")
+                                self.response.write("SUCCESS: boat was brought in from sea and added to slip")
                             else:
                                 self.response.status = 403
                                 self.response.write("ERROR: slip is already occupied")
@@ -332,7 +343,7 @@ class BoatInSlipHandler(webapp2.RequestHandler):
                     slip.current_boat = ""
                     slip.arrival_date = ""
                     slip.put()
-                    self.response.write("SUCCESS: boat was removed from slip")
+                    self.response.write("SUCCESS: boat was removed from slip and sent out to sea")
                 else:
                     self.response.status = 403
                     self.response.write("ERROR: no boat in slip")
