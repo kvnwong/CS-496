@@ -1,24 +1,29 @@
 <html lang="en">
     <head>
         <title>OAuth 2.0 Implementation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
 
         <div class="container">
             <div class="jumbotron">
-                <h1>OAuth 2.0 Implementation</h1>
-                <p>
-                    This webpage demonstrates an implementation of OAuth 2.0
-                    Server Side flow. Access to the email of your Google+
-                    account will be requested. Once access has been granted,
-                    the following information will be displayed: first and last
-                    name, the URL to acess your Google+ account, and the value
-                    of the state variable that was used to secure the original
-                    redirect.
+                <h1 class="centered-text display-3">OAuth 2.0 Implementation</h1>
+                <p class="lead centered-text">
+                    This application demonstrates OAuth 2.0 Server Side flow.
+                    This app will request access to protected resources (email)
+                    on your Google+ account. Once access to said protected
+                    resource has been gained, the following information will be
+                    displayed: first and last name, URL to access your Google+
+                    account, and the value of the state variable that was used
+                    to secure the original redirect.
                 </p>
                 <br>
-                <div>
-                    <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=email&access_type=offline&include_granted_scopes=true&state=ItsOver9000&redirect_uri=http://localhost:8080/oauth&response_type=code&client_id=913425740949-0c0i284ks9elrosgpv5rdh2qvsal8cim.apps.googleusercontent.com">Give Access</a>
+                <div class="text-center">
+                    <div class="btn-group">
+                        <a href="{{ url }}" class="btn btn-primary" style="background-color: #2196f3">Provide Access</a>
+                    </div>
                 </div>
             </div>
         </div>
