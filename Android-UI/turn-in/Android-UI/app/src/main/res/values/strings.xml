@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="horizontal_button">Horizontal</string>
+    <string name="vertical_button">Vertical</string>
+    <string name="grid_button">Grid</string>
+    <string name="relative_button">Relative</string>
+</resources>
