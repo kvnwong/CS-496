@@ -6,25 +6,6 @@
     android:layout_height="match_parent"
     tools:context="cs496.androidhttpandoauth.APIActivity">
 
-    <Button
-        android:id="@+id/google_plus_get_post_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="get posts"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/google_plus_create_post_button"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/google_plus_create_post_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="create post"
-        app:layout_constraintBaseline_toBaselineOf="@+id/google_plus_get_post_button"
-        app:layout_constraintLeft_toRightOf="@+id/google_plus_get_post_button"
-        app:layout_constraintRight_toRightOf="parent" />
-
     <ListView
         android:id="@+id/google_post_list"
         android:layout_width="0dp"
@@ -34,9 +15,42 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/google_plus_get_post_button" />
+
+    <EditText
+        android:id="@+id/google_plus_post_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Enter text"
+        android:inputType="textPersonName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/google_plus_create_post_button"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/google_plus_create_post_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="create post"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/google_plus_post_message" />
+
+    <Button
+        android:id="@+id/google_plus_get_post_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="get posts"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/google_plus_create_post_button" />
 </android.support.constraint.ConstraintLayout>

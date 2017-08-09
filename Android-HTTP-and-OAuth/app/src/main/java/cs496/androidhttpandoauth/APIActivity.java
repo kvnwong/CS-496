@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
@@ -37,8 +38,10 @@ import java.util.Map;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class APIActivity extends AppCompatActivity {
@@ -46,6 +49,8 @@ public class APIActivity extends AppCompatActivity {
     private AuthorizationService mAuthorizationService;
     private AuthState mAuthState;
     private OkHttpClient mOkHttpClient;
+    public static final MediaType JSON
+            = MediaType.parse("application/json; charset=utf-8");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +86,7 @@ public class APIActivity extends AppCompatActivity {
                                             JSONObject j = new JSONObject(r);
                                             JSONArray items = j.getJSONArray("items");
                                             List<Map<String,String>> posts = new ArrayList<Map<String,String>>();
-                                            for(int i = 0; i < items.length(); i++){
+                                            for(int i = 0; i < 3; i++){
                                                 HashMap<String, String> m = new HashMap<String, String>();
                                                 m.put("published", items.getJSONObject(i).getString("published"));
                                                 m.put("title",items.getJSONObject(i).getString("title"));
@@ -103,6 +108,48 @@ public class APIActivity extends AppCompatActivity {
                                             e1.printStackTrace();
                                         }
 
+                                    }
+                                });
+                            }
+                        }
+                    });
+                } catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        ((Button)findViewById(R.id.google_plus_create_post_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    mAuthState.performActionWithFreshTokens(mAuthorizationService, new AuthState.AuthStateAction() {
+                        @Override
+                        public void execute(@Nullable String accessToken, @Nullable String idToken, @Nullable AuthorizationException e) {
+                            if(e == null){
+                                EditText mEdit;
+                                mEdit = (EditText)findViewById(R.id.google_plus_post_message);
+                                String userInput = mEdit.getText().toString();
+                                String json = "{'object': {'originalContent': '" + userInput + "'},'access': {'domainRestricted': true}}";
+                                mOkHttpClient = new OkHttpClient();
+                                HttpUrl reqUrl = HttpUrl.parse("https://www.googleapis.com/plusDomains/v1/people/me/activities");
+                                reqUrl = reqUrl.newBuilder().addQueryParameter("key", "AIzaSyD8uDLplQsURqhGBV4Gp1kHVAXypGmq3DA").build();
+                                RequestBody body = RequestBody.create(JSON, json);
+                                Request request = new Request.Builder()
+                                        .url(reqUrl)
+                                        .post(body)
+                                        .addHeader("Authorization", "Bearer " + accessToken)
+                                        .build();
+                                mOkHttpClient.newCall(request).enqueue(new Callback() {
+                                    @Override
+                                    public void onFailure(Call call, IOException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                    @Override
+                                    public void onResponse(Call call, Response response) throws IOException {
+                                        String r = response.body().string();
+                                        //System.out.println(r);
                                     }
                                 });
                             }
