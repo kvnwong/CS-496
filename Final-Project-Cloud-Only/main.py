@@ -131,28 +131,37 @@ class OAuthHandler(webapp2.RequestHandler):
 
 class UserHandler(webapp2.RequestHandler):
     def get(self, user_id):
-        assets_and_account = []
-        CryptoAsset_key = ""
-        for user in CryptoAsset.query():
-            if user.user_id == user_id:
-                CryptoAsset_key = user.id
-                get_CryptoAsset = ndb.Key(urlsafe=CryptoAsset_key).get()
-                get_CryptoAsset_dict = get_CryptoAsset.to_dict()
-                assets_and_account.append(get_CryptoAsset_dict)
-
-        UserAccount_key = ""
+        user_exists = False
         for user in UserAccount.query():
             if user.user_id == user_id:
-                UserAccount_key = user.id
+                user_exists = True
+        if user_exists:
+            assets_and_account = []
+            CryptoAsset_key = ""
+            for asset in CryptoAsset.query():
+                if asset.user_id == user_id:
+                    CryptoAsset_key = asset.id
+                    get_CryptoAsset = ndb.Key(urlsafe=CryptoAsset_key).get()
+                    get_CryptoAsset_dict = get_CryptoAsset.to_dict()
+                    get_CryptoAsset_dict['self'] = "/users/" + user_id + "/cryptoassets/" + asset.id
+                    assets_and_account.append(get_CryptoAsset_dict)
 
-        get_UserAccount = ndb.Key(urlsafe=UserAccount_key).get()
-        get_UserAccount_dict = get_UserAccount.to_dict()
-        assets_and_account.append(get_UserAccount_dict)
+            UserAccount_key = ""
+            for user in UserAccount.query():
+                if user.user_id == user_id:
+                    UserAccount_key = user.id
 
-        self_string = "/users/" + user_id
-        self_dict = {"self": self_string}
-        assets_and_account.append(self_dict)
-        self.response.write(json.dumps(assets_and_account))
+            get_UserAccount = ndb.Key(urlsafe=UserAccount_key).get()
+            get_UserAccount_dict = get_UserAccount.to_dict()
+            assets_and_account.append(get_UserAccount_dict)
+
+            self_string = "/users/" + user_id
+            self_dict = {"self": self_string}
+            assets_and_account.append(self_dict)
+            self.response.write(json.dumps(assets_and_account))
+        else:
+            self.response.status = 400
+            self.response.write("ERROR: User does not exist")
 
 
 class CryptoAssetsHandler(webapp2.RequestHandler):
@@ -297,15 +306,104 @@ class CryptoAssetsHandler(webapp2.RequestHandler):
             self.response.write("ERROR: Crypto Asset does not exist")
 
 class UserAccountHandler(webapp2.RequestHandler):
-    def get(self, id=None):
+    def get(self, user_id):
+        user_account_exists = False
         UserAccount_key = ""
         for user in UserAccount.query():
-            if user.user_id == id:
+            if user.user_id == user_id:
+                user_account_exists = True
                 UserAccount_key = user.id
-        get_UserAccount = ndb.Key(urlsafe=UserAccount_key).get()
-        get_UserAccount_dict = get_UserAccount.to_dict()
-        get_UserAccount_dict['self'] = "/users/" + id + "/accountinfo"
-        self.response.write(json.dumps(get_UserAccount_dict))
+        if user_account_exists:
+            get_UserAccount = ndb.Key(urlsafe=UserAccount_key).get()
+            get_UserAccount_dict = get_UserAccount.to_dict()
+            get_UserAccount_dict['self'] = "/users/" + user_id + "/accountinfo"
+            self.response.write(json.dumps(get_UserAccount_dict))
+        else:
+            self.response.status = 400
+            self.response.write("ERROR: User does not exist")
+
+    def delete(self, user_id):
+        user_account_exists = False
+        UserAccount_key = ""
+        for user in UserAccount.query():
+            if user.user_id == user_id:
+                user_account_exists = True
+                UserAccount_key = user.id
+        if user_account_exists:
+            ndb.Key(urlsafe=UserAccount_key).delete()
+            self.response.write("SUCCESS: Crypto Asset was delted")
+        else:
+            self.response.status = 400
+            self.response.write("ERROR: User does not exist")
+
+
+    def patch(self, user_id):
+        patch_data = json.loads(self.request.body)
+        user_account_exists = False
+        UserAccount_key = ""
+        for user in UserAccount.query():
+            if user.user_id == user_id:
+                user_account_exists = True
+                UserAccount_key = user.id
+        if user_account_exists:
+            patch_user = ndb.Key(urlsafe=UserAccount_key).get()
+            if len(patch_data) > 1:
+                self.response.status = 400
+                self.response.write("ERROR: expected format -> {\"fname\": \"str\"} or {\"lname\": \"str\"} or {\"email\": \"str\"}")
+            else:
+                for key in patch_data:
+                    if key == "name":
+                        patch_user.fname = patch_data['fname']
+                        patch_user.put()
+                        self.response.write("SUCCESS: User 'name' was updated")
+                    elif key == "lname":
+                        patch_user.lname = patch_data['lname']
+                        patch_user.put()
+                        self.response.write("SUCCESS: User 'lname' was updated")
+                    elif key == "email":
+                        patch_user.email = patch_data['email']
+                        patch_user.put()
+                        self.response.write("SUCCESS: User 'email' was updated")
+                    else:
+                        self.response.status = 400
+                        self.response.write("ERROR: expected format -> {\"fname\": \"str\"} or {\"lname\": \"str\"} or {\"email\": \"str\"}")
+        else:
+            self.response.status = 400
+            self.response.write("ERROR: User does not exist")
+
+
+    def put(self, user_id):
+        put_data = json.loads(self.request.body)
+        user_account_exists = False
+        UserAccount_key = ""
+        for user in UserAccount.query():
+            if user.user_id == user_id:
+                user_account_exists = True
+                UserAccount_key = user.id
+        if user_account_exists:
+            put_user = ndb.Key(urlsafe=UserAccount_key).get()
+            input_fname = False
+            input_lname = False
+            input_email = False
+            for item in put_data:
+                if item == "fname":
+                    input_fname = True
+                elif item == "lname":
+                    input_lname = True
+                elif item == "email":
+                    input_email = True
+            if input_fname and input_lname and input_email:
+                put_user.fname = put_data['fname']
+                put_user.lname = put_data['lname']
+                put_user.email = put_data['email']
+                put_user.put()
+                self.response.write("SUCCESS: User 'fname', 'lname', and 'email' were updated")
+            else:
+                self.response.status = 400
+                self.response.write("ERROR: expected format -> {\"fname\": \"str\", \"lname\": \"str\", \"email\": \"str\"}")
+        else:
+            self.response.status = 400
+            self.response.write("ERROR: User does not exist")
 
 allowed_methods = webapp2.WSGIApplication.allowed_methods
 new_allowed_methods = allowed_methods.union(('PATCH',))
