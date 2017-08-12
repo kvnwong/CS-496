@@ -13,6 +13,7 @@ CLIENT_ID = '168052706527-dkri7eta1m4v79sq668rc974jnk1pgtm.apps.googleuserconten
 CLIENT_SECRET = 'sL_Uy_wbmbLCCNAQiFx_z-wL'
 REDIRECT_URI = 'http://localhost:8080/oauth'
 
+
 class CryptoAsset(ndb.Model):
     id = ndb.StringProperty()
     user_id = ndb.StringProperty()
@@ -21,12 +22,14 @@ class CryptoAsset(ndb.Model):
     rank = ndb.StringProperty()
     price_usd = ndb.StringProperty()
 
+
 class UserAccount(ndb.Model):
     id = ndb.StringProperty()
     user_id = ndb.StringProperty()
     fname = ndb.StringProperty()
     lname = ndb.StringProperty()
     email = ndb.StringProperty()
+
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
@@ -46,6 +49,7 @@ class MainPage(webapp2.RequestHandler):
 
         path = os.path.join(os.path.dirname(__file__), 'templates/index.html')
         self.response.out.write(template.render(path, template_values))
+
 
 class OAuthHandler(webapp2.RequestHandler):
     def get(self):
@@ -124,6 +128,7 @@ class OAuthHandler(webapp2.RequestHandler):
         path = os.path.join(os.path.dirname(__file__), 'templates/oauth.html')
         self.response.out.write(template.render(path, template_values))
 
+
 class UserHandler(webapp2.RequestHandler):
     def get(self, user_id):
         assets_and_account = []
@@ -149,6 +154,7 @@ class UserHandler(webapp2.RequestHandler):
         assets_and_account.append(self_dict)
         self.response.write(json.dumps(assets_and_account))
 
+
 class CryptoAssetsHandler(webapp2.RequestHandler):
     def get(self, user_id, asset_id=None):
         if asset_id:
@@ -166,11 +172,11 @@ class CryptoAssetsHandler(webapp2.RequestHandler):
                     get_CryptoAsset_dict = get_CryptoAsset.to_dict()
                     get_CryptoAsset_dict['self'] = "/users/" + user_id + "/cryptoassets/" + user.id
                     asset_list.append(get_CryptoAsset_dict)
-
             self_string = "/users/" + user_id + "/cryptoassets/"
             self_dict = {"self": self_string}
             asset_list.append(self_dict)
             self.response.write(json.dumps(asset_list))
+
 
     def post(self, user_id):
         post_data = json.loads(self.request.body)
@@ -204,15 +210,88 @@ class CryptoAssetsHandler(webapp2.RequestHandler):
             self.response.status = 400
             self.response.write("ERROR: expected format -> {\"name\": \"str\", \"symbol\": \"str\", \"rank\": \"str\", \"price_usd\": \"str\"}")
 
+
     def delete(self, user_id, asset_id):
         cryptoAsset_exists = False
         for cryptoAsset in CryptoAsset.query():
             if cryptoAsset.id == asset_id:
                 cryptoAsset_exists = True
-
         if cryptoAsset_exists:
             ndb.Key(urlsafe=asset_id).delete()
             self.response.write("SUCCESS: Crypto Asset was delted")
+        else:
+            self.response.status = 400
+            self.response.write("ERROR: Crypto Asset does not exist")
+
+
+    def patch(self, user_id, asset_id):
+        patch_data = json.loads(self.request.body)
+        cryptoAsset_exists = False
+        for cryptoAsset in CryptoAsset.query():
+            if cryptoAsset.id == asset_id:
+                cryptoAsset_exists = True
+        if cryptoAsset_exists:
+            patch_cryptoAsset = ndb.Key(urlsafe=asset_id).get()
+            if len(patch_data) > 1:
+                self.response.status = 400
+                self.response.write("ERROR: expected format -> {\"name\": \"str\"} or {\"symbol\": \"str\"} or {\"rank\": \"str\"} or {\"price_usd\": \"str\"}")
+            else:
+                for key in patch_data:
+                    if key == "name":
+                        patch_cryptoAsset.name = patch_data['name']
+                        patch_cryptoAsset.put()
+                        self.response.write("SUCCESS: Crypto Asset 'name' was updated")
+                    elif key == "symbol":
+                        patch_cryptoAsset.symbol = patch_data['symbol']
+                        patch_cryptoAsset.put()
+                        self.response.write("SUCCESS: Crypto Asset 'symbol' was updated")
+                    elif key == "rank":
+                        patch_cryptoAsset.rank = patch_data['rank']
+                        patch_cryptoAsset.put()
+                        self.response.write("SUCCESS: Crypto Asset 'rank' was updated")
+                    elif key == "price_usd":
+                        patch_cryptoAsset.price_usd = patch_data['price_usd']
+                        patch_cryptoAsset.put()
+                        self.response.write("SUCCESS: Crypto Asset 'price_usd' was updated")
+                    else:
+                        self.response.status = 400
+                        self.response.write("ERROR: expected format -> {\"name\": \"str\"} or {\"symbol\": \"str\"} or {\"rank\": \"str\"} or {\"price_usd\": \"str\"}")
+        else:
+            self.response.status = 400
+            self.response.write("ERROR: Crypto Asset does not exist")
+
+
+    def put(self, user_id, asset_id):
+        put_data = json.loads(self.request.body)
+        cryptoAsset_exists = False
+        for cryptoAsset in CryptoAsset.query():
+            if cryptoAsset.id == asset_id:
+                cryptoAsset_exists = True
+        if cryptoAsset_exists:
+            put_cryptoAsset = ndb.Key(urlsafe=asset_id).get()
+            input_name = False
+            input_symbol = False
+            input_rank = False
+            input_price_usd = False
+            for item in put_data:
+                if item == "name":
+                    input_name = True
+                elif item == "symbol":
+                    input_symbol = True
+                elif item == "rank":
+                    input_rank = True
+                elif item == "price_usd":
+                    input_price_usd = True
+            if input_name and input_symbol and input_rank and input_price_usd:
+                put_cryptoAsset.name = put_data['name']
+                put_cryptoAsset.symbol = put_data['symbol']
+                put_cryptoAsset.rank = put_data['rank']
+                put_cryptoAsset.price_usd = put_data['price_usd']
+                put_cryptoAsset.put()
+                self.response.write("SUCCESS: Crypto Asset 'name', 'symbol', 'rank', and 'price_usd' were updated")
+            else:
+                self.response.status = 400
+                self.response.write("ERROR: expected format -> {\"name\": \"str\", \"symbol\": \"str\", \"rank\": \"str\", \"price_usd\": \"str\"}")
         else:
             self.response.status = 400
             self.response.write("ERROR: Crypto Asset does not exist")
@@ -223,7 +302,6 @@ class UserAccountHandler(webapp2.RequestHandler):
         for user in UserAccount.query():
             if user.user_id == id:
                 UserAccount_key = user.id
-
         get_UserAccount = ndb.Key(urlsafe=UserAccount_key).get()
         get_UserAccount_dict = get_UserAccount.to_dict()
         get_UserAccount_dict['self'] = "/users/" + id + "/accountinfo"
