@@ -11,7 +11,7 @@ import os
 
 CLIENT_ID = '168052706527-dkri7eta1m4v79sq668rc974jnk1pgtm.apps.googleusercontent.com'
 CLIENT_SECRET = 'sL_Uy_wbmbLCCNAQiFx_z-wL'
-REDIRECT_URI = 'http://localhost:8080/oauth'
+REDIRECT_URI = 'https://final-project-cloud-only.appspot.com/oauth'
 
 
 class CryptoAsset(ndb.Model):
@@ -41,7 +41,7 @@ class MainPage(webapp2.RequestHandler):
         url = url + "&include_granted_scopes=true"
         url = url + "&state="
         url = url + random_string
-        url = url + "&redirect_uri=http://localhost:8080/oauth"
+        url = url + "&redirect_uri=https://final-project-cloud-only.appspot.com/oauth"
         url = url + "&response_type=code"
         url = url + "&client_id=168052706527-dkri7eta1m4v79sq668rc974jnk1pgtm.apps.googleusercontent.com"
 
