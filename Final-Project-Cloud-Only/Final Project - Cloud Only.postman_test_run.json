@@ -1,0 +1,1700 @@
+{
+	"id": "d2a05fa7-8d4a-4f0e-9c7b-400f65e8c1bd",
+	"name": "Final Project - Cloud Only",
+	"allTests": [],
+	"timestamp": "2017-08-13T05:38:01.248Z",
+	"collection_id": "9fa4e247-9850-6696-f342-1d7527fd7565",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "no-environment",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "9fa4e247-9850-6696-f342-1d7527fd7565",
+		"name": "Final Project - Cloud Only",
+		"description": "",
+		"order": [
+			"efa692bc-8988-976f-3f95-8b95006b7007",
+			"4d1ef91a-9cb7-6689-bc74-9ae4a8689c39",
+			"e6b3a515-60fe-215a-8a1e-65f0154b544c",
+			"28061317-1d7c-b155-b245-ae86244bf83b",
+			"8116cdac-a91c-1fc0-3097-2955d2f15dc6",
+			"3f4d5452-71a3-4fcb-451d-68b10d490a57",
+			"6fc62009-5eb4-233a-8d67-671bd9af966c",
+			"cacefd95-2126-4d27-4744-50a7b45d1c2b",
+			"6ffe3f51-6cfe-b2fa-7eed-70b61e6b4f88",
+			"c43573b8-6e05-3bfb-194e-9eae1b25d5c7",
+			"a0fa0bf9-5f13-ef44-9ccb-55ebb00d73e2",
+			"0cf933ee-8f8a-1bc6-320c-09de65f44ba8",
+			"4088c865-b8d2-4ad0-221c-0818d81650ca",
+			"f13306cd-4f2e-5436-d0bf-43552ee6a838",
+			"ab4966ca-5098-5110-27f4-452169eabaeb",
+			"496e782c-8c2e-0aa4-2a42-eba1565d89b6",
+			"467d17e0-e9c1-fe60-dbf3-b816666d272a",
+			"ca8b63e6-d410-6a1f-7f3b-7395a8f04927",
+			"99205deb-61dd-087a-a404-e667e43927fc",
+			"9c74de98-5214-3a0f-6db9-4363b068232f",
+			"9a593b81-8ac1-d1ea-bd34-0b312c01ef08",
+			"3833b44e-a1ab-4dd8-1e70-0492bf1a4efc",
+			"ad4c0d4d-26fe-f293-8d16-eb3b82906d1b",
+			"1f9262b9-5c88-ab11-7ffb-a49c6bd7a909",
+			"cf797484-c7c8-60a7-649e-2cf07e60204d",
+			"f373cc87-8c2b-0daa-8d79-4e7b507a804d",
+			"666e3a48-cd4e-3131-e848-fecef8d0177e",
+			"63a5d7f0-9949-b036-ee98-9af8e8453632",
+			"472ee4ca-8051-5432-4489-aedbf4b2f2be",
+			"a7adad04-47e5-4bfa-b5f9-24a28a9ae203"
+		],
+		"folders": [],
+		"folders_order": [],
+		"timestamp": 1502595306861,
+		"synced": false,
+		"remote_id": 0,
+		"owner": "2340024",
+		"sharedWithTeam": false,
+		"subscribed": false,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"createdAt": 1502595306861,
+		"updatedAt": "2017-08-13T05:10:11.360Z",
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {}
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "Get Assets + Account Info",
+			"id": "efa692bc-8988-976f-3f95-8b95006b7007",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: User's Assets and Account Info were in the response": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: User's Assets and Account Info were in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"471"
+			],
+			"allTests": [
+				{
+					"SUCCESS: User's Assets and Account Info were in the response": true
+				}
+			],
+			"time": "471",
+			"totalRequestTime": "471",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Get Assets + Account Info",
+			"id": "4d1ef91a-9cb7-6689-bc74-9ae4a8689c39",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"144"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "144",
+			"totalRequestTime": "144",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get Asset",
+			"id": "e6b3a515-60fe-215a-8a1e-65f0154b544c",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: Asset was in the response": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Asset was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"375"
+			],
+			"allTests": [
+				{
+					"SUCCESS: Asset was in the response": true
+				}
+			],
+			"time": "375",
+			"totalRequestTime": "375",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Get Asset",
+			"id": "28061317-1d7c-b155-b245-ae86244bf83b",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1woM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"372"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "372",
+			"totalRequestTime": "372",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD asset* Get Asset",
+			"id": "8116cdac-a91c-1fc0-3097-2955d2f15dc6",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1wo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad asset": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad asset": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"179"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad asset": true
+				}
+			],
+			"time": "179",
+			"totalRequestTime": "179",
+			"iterationResults": {}
+		},
+		{
+			"name": "Post New Asset",
+			"id": "3f4d5452-71a3-4fcb-451d-68b10d490a57",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: New Asset was in the response": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: New Asset was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"982"
+			],
+			"allTests": [
+				{
+					"SUCCESS: New Asset was in the response": true
+				}
+			],
+			"time": "982",
+			"totalRequestTime": "982",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Post New Asset",
+			"id": "6fc62009-5eb4-233a-8d67-671bd9af966c",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"96"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "96",
+			"totalRequestTime": "96",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD body* Post New Asset",
+			"id": "cacefd95-2126-4d27-4744-50a7b45d1c2b",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"116"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "116",
+			"totalRequestTime": "116",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get Assets",
+			"id": "6ffe3f51-6cfe-b2fa-7eed-70b61e6b4f88",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: all assets returned": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: all assets returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"211"
+			],
+			"allTests": [
+				{
+					"SUCCESS: all assets returned": true
+				}
+			],
+			"time": "211",
+			"totalRequestTime": "211",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Get Assets",
+			"id": "c43573b8-6e05-3bfb-194e-9eae1b25d5c7",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"144"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "144",
+			"totalRequestTime": "144",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch Asset",
+			"id": "a0fa0bf9-5f13-ef44-9ccb-55ebb00d73e2",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: Crypto Asset 'rank' was updated": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Crypto Asset 'rank' was updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"892"
+			],
+			"allTests": [
+				{
+					"SUCCESS: Crypto Asset 'rank' was updated": true
+				}
+			],
+			"time": "892",
+			"totalRequestTime": "892",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Patch Asset",
+			"id": "0cf933ee-8f8a-1bc6-320c-09de65f44ba8",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1woM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"130"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "130",
+			"totalRequestTime": "130",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD asset* Patch Asset",
+			"id": "4088c865-b8d2-4ad0-221c-0818d81650ca",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1wo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad asset": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad asset": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"141"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad asset": true
+				}
+			],
+			"time": "141",
+			"totalRequestTime": "141",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD body* Patch Asset",
+			"id": "f13306cd-4f2e-5436-d0bf-43552ee6a838",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"288"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "288",
+			"totalRequestTime": "288",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put Asset",
+			"id": "ab4966ca-5098-5110-27f4-452169eabaeb",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: Updated Asset was in the response": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Updated Asset was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"868"
+			],
+			"allTests": [
+				{
+					"SUCCESS: Updated Asset was in the response": true
+				}
+			],
+			"time": "868",
+			"totalRequestTime": "868",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Put Asset",
+			"id": "496e782c-8c2e-0aa4-2a42-eba1565d89b6",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1woM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"149"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "149",
+			"totalRequestTime": "149",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD asset* Put Asset",
+			"id": "467d17e0-e9c1-fe60-dbf3-b816666d272a",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1wo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad asset": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad asset": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"184"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad asset": true
+				}
+			],
+			"time": "184",
+			"totalRequestTime": "184",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete Asset",
+			"id": "ca8b63e6-d410-6a1f-7f3b-7395a8f04927",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: Crypto Asset was deleted": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Crypto Asset was deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"268"
+			],
+			"allTests": [
+				{
+					"SUCCESS: Crypto Asset was deleted": true
+				}
+			],
+			"time": "268",
+			"totalRequestTime": "268",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Delete Asset",
+			"id": "99205deb-61dd-087a-a404-e667e43927fc",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDQuwkM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"250"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "250",
+			"totalRequestTime": "250",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD asset* Delete Asset",
+			"id": "9c74de98-5214-3a0f-6db9-4363b068232f",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDQuwk",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad asset": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad asset": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"246"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad asset": true
+				}
+			],
+			"time": "246",
+			"totalRequestTime": "246",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get Account Info",
+			"id": "9a593b81-8ac1-d1ea-bd34-0b312c01ef08",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: User's Assets Account Info was in the response": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: User's Assets Account Info was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"115"
+			],
+			"allTests": [
+				{
+					"SUCCESS: User's Assets Account Info was in the response": true
+				}
+			],
+			"time": "115",
+			"totalRequestTime": "115",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Get Account Info",
+			"id": "3833b44e-a1ab-4dd8-1e70-0492bf1a4efc",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"103"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "103",
+			"totalRequestTime": "103",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch User Account Info",
+			"id": "ad4c0d4d-26fe-f293-8d16-eb3b82906d1b",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: User 'fname' was updated": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: User 'fname' was updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"498"
+			],
+			"allTests": [
+				{
+					"SUCCESS: User 'fname' was updated": true
+				}
+			],
+			"time": "498",
+			"totalRequestTime": "498",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Patch User Account Info",
+			"id": "1f9262b9-5c88-ab11-7ffb-a49c6bd7a909",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"110"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "110",
+			"totalRequestTime": "110",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD body* Patch User Account Info",
+			"id": "cf797484-c7c8-60a7-649e-2cf07e60204d",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"153"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "153",
+			"totalRequestTime": "153",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put User Account Info",
+			"id": "f373cc87-8c2b-0daa-8d79-4e7b507a804d",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: Updated User Account was in the response": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Updated User Account was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"438"
+			],
+			"allTests": [
+				{
+					"SUCCESS: Updated User Account was in the response": true
+				}
+			],
+			"time": "438",
+			"totalRequestTime": "438",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Put User Account Info",
+			"id": "666e3a48-cd4e-3131-e848-fecef8d0177e",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"127"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "127",
+			"totalRequestTime": "127",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD body* Put User Account Info",
+			"id": "63a5d7f0-9949-b036-ee98-9af8e8453632",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad body": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"150"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad body": true
+				}
+			],
+			"time": "150",
+			"totalRequestTime": "150",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete User Account",
+			"id": "472ee4ca-8051-5432-4489-aedbf4b2f2be",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"SUCCESS: User's account was deleted": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: User's account was deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"140"
+			],
+			"allTests": [
+				{
+					"SUCCESS: User's account was deleted": true
+				}
+			],
+			"time": "140",
+			"totalRequestTime": "140",
+			"iterationResults": {}
+		},
+		{
+			"name": "*BAD user* Delete User Account",
+			"id": "a7adad04-47e5-4bfa-b5f9-24a28a9ae203",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/accountinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"SUCCESS: error caught, bad user": true
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"108"
+			],
+			"allTests": [
+				{
+					"SUCCESS: error caught, bad user": true
+				}
+			],
+			"time": "108",
+			"totalRequestTime": "108",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 30,
+	"totalFail": 0,
+	"totalTime": 8448,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Get Assets + Account Info",
+			"id": "efa692bc-8988-976f-3f95-8b95006b7007",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: User's Assets and Account Info were in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Get Assets + Account Info",
+			"id": "4d1ef91a-9cb7-6689-bc74-9ae4a8689c39",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get Asset",
+			"id": "e6b3a515-60fe-215a-8a1e-65f0154b544c",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Asset was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Get Asset",
+			"id": "28061317-1d7c-b155-b245-ae86244bf83b",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1woM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD asset* Get Asset",
+			"id": "8116cdac-a91c-1fc0-3097-2955d2f15dc6",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1wo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad asset": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Post New Asset",
+			"id": "3f4d5452-71a3-4fcb-451d-68b10d490a57",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: New Asset was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Post New Asset",
+			"id": "6fc62009-5eb4-233a-8d67-671bd9af966c",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD body* Post New Asset",
+			"id": "cacefd95-2126-4d27-4744-50a7b45d1c2b",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get Assets",
+			"id": "6ffe3f51-6cfe-b2fa-7eed-70b61e6b4f88",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: all assets returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Get Assets",
+			"id": "c43573b8-6e05-3bfb-194e-9eae1b25d5c7",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch Asset",
+			"id": "a0fa0bf9-5f13-ef44-9ccb-55ebb00d73e2",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Crypto Asset 'rank' was updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Patch Asset",
+			"id": "0cf933ee-8f8a-1bc6-320c-09de65f44ba8",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1woM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD asset* Patch Asset",
+			"id": "4088c865-b8d2-4ad0-221c-0818d81650ca",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1wo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad asset": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD body* Patch Asset",
+			"id": "f13306cd-4f2e-5436-d0bf-43552ee6a838",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put Asset",
+			"id": "ab4966ca-5098-5110-27f4-452169eabaeb",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Updated Asset was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Put Asset",
+			"id": "496e782c-8c2e-0aa4-2a42-eba1565d89b6",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1woM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD asset* Put Asset",
+			"id": "467d17e0-e9c1-fe60-dbf3-b816666d272a",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDg1wo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad asset": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete Asset",
+			"id": "ca8b63e6-d410-6a1f-7f3b-7395a8f04927",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/ahpzfmZpbmFsLXByb2plY3QtY2xvdWQtb25seXIYCxILQ3J5cHRvQXNzZXQYgICAgPjChAoM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Crypto Asset was deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Delete Asset",
+			"id": "99205deb-61dd-087a-a404-e667e43927fc",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDQuwkM",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD asset* Delete Asset",
+			"id": "9c74de98-5214-3a0f-6db9-4363b068232f",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/cryptoassets/aghkZXZ-Tm9uZXIYCxILQ3J5cHRvQXNzZXQYgICAgIDQuwk",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad asset": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get Account Info",
+			"id": "9a593b81-8ac1-d1ea-bd34-0b312c01ef08",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: User's Assets Account Info was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Get Account Info",
+			"id": "3833b44e-a1ab-4dd8-1e70-0492bf1a4efc",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch User Account Info",
+			"id": "ad4c0d4d-26fe-f293-8d16-eb3b82906d1b",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: User 'fname' was updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Patch User Account Info",
+			"id": "1f9262b9-5c88-ab11-7ffb-a49c6bd7a909",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD body* Patch User Account Info",
+			"id": "cf797484-c7c8-60a7-649e-2cf07e60204d",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put User Account Info",
+			"id": "f373cc87-8c2b-0daa-8d79-4e7b507a804d",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: Updated User Account was in the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Put User Account Info",
+			"id": "666e3a48-cd4e-3131-e848-fecef8d0177e",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD body* Put User Account Info",
+			"id": "63a5d7f0-9949-b036-ee98-9af8e8453632",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad body": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete User Account",
+			"id": "472ee4ca-8051-5432-4489-aedbf4b2f2be",
+			"url": "https://final-project-cloud-only.appspot.com/users/101468941788838769979/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: User's account was deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "*BAD user* Delete User Account",
+			"id": "a7adad04-47e5-4bfa-b5f9-24a28a9ae203",
+			"url": "https://final-project-cloud-only.appspot.com/users/10146894178883876997/accountinfo",
+			"time": "2017-08-13T05:38:01.248Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"SUCCESS: error caught, bad user": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
