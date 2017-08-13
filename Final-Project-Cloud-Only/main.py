@@ -11,7 +11,7 @@ import os
 
 CLIENT_ID = '168052706527-dkri7eta1m4v79sq668rc974jnk1pgtm.apps.googleusercontent.com'
 CLIENT_SECRET = 'sL_Uy_wbmbLCCNAQiFx_z-wL'
-REDIRECT_URI = 'https://final-project-cloud-only.appspot.com/oauth'
+REDIRECT_URI = 'http://localhost:8080/oauth'
 
 
 class CryptoAsset(ndb.Model):
@@ -41,7 +41,7 @@ class MainPage(webapp2.RequestHandler):
         url = url + "&include_granted_scopes=true"
         url = url + "&state="
         url = url + random_string
-        url = url + "&redirect_uri=https://final-project-cloud-only.appspot.com/oauth"
+        url = url + "&redirect_uri=http://localhost:8080/oauth"
         url = url + "&response_type=code"
         url = url + "&client_id=168052706527-dkri7eta1m4v79sq668rc974jnk1pgtm.apps.googleusercontent.com"
 
@@ -185,6 +185,9 @@ class CryptoAssetsHandler(webapp2.RequestHandler):
                     self.response.status = 400
                     self.response.write("ERROR: Crypto Asset does not exist")
             else:
+                result = urlfetch.fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
+                json_crypto_assests = json.loads(result.content)
+                asset_total = 0.0
                 asset_list = []
                 CryptoAsset_key = ""
                 for user in CryptoAsset.query():
@@ -194,9 +197,14 @@ class CryptoAssetsHandler(webapp2.RequestHandler):
                         get_CryptoAsset_dict = get_CryptoAsset.to_dict()
                         get_CryptoAsset_dict['self'] = "/users/" + user_id + "/cryptoassets/" + user.id
                         asset_list.append(get_CryptoAsset_dict)
-                self_string = "/users/" + user_id + "/cryptoassets/"
+                        for i in range(100):
+                            if json_crypto_assests[i]['name'] == get_CryptoAsset_dict['name']:
+                                asset_total = asset_total + float(json_crypto_assests[i]['price_usd'])
+                self_string = "/users/" + user_id + "/cryptoassets"
                 self_dict = {"self": self_string}
                 asset_list.append(self_dict)
+                asset_total_dict = {"asset_total": asset_total}
+                asset_list.append(asset_total_dict)
                 self.response.write(json.dumps(asset_list))
         else:
             self.response.status = 400
@@ -210,35 +218,38 @@ class CryptoAssetsHandler(webapp2.RequestHandler):
             if user.user_id == user_id:
                 user_exists = True
         if user_exists:
+            result = urlfetch.fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
+            json_crypto_assests = json.loads(result.content)
             input_name = False
-            input_symbol = False
-            input_rank = False
-            input_price_usd = False
+            asset_found = False
+            index = 0
             for item in post_data:
                 if item == "name":
                     input_name = True
-                elif item == "symbol":
-                    input_symbol = True
-                elif item == "rank":
-                    input_rank = True
-                elif item == "price_usd":
-                    input_price_usd = True
-            if input_name and input_symbol and input_rank and input_price_usd:
-                post_cryptoAsset = CryptoAsset()
-                post_cryptoAsset.user_id = user_id
-                post_cryptoAsset.name = post_data['name']
-                post_cryptoAsset.symbol = post_data['symbol']
-                post_cryptoAsset.rank = post_data['rank']
-                post_cryptoAsset.price_usd = post_data['price_usd']
-                post_cryptoAsset.put()
-                post_cryptoAsset.id = str(post_cryptoAsset.key.urlsafe())
-                post_cryptoAsset.put()
-                post_cryptoAsset_dict = post_cryptoAsset.to_dict()
-                post_cryptoAsset_dict['self'] = '/users/' + post_cryptoAsset.user_id + "/cryptoassets/" + post_cryptoAsset.id
-                self.response.write(json.dumps(post_cryptoAsset_dict))
+            if input_name:
+                for i in range(100):
+                    if json_crypto_assests[i]['name'] == post_data['name']:
+                        index = i
+                        asset_found = True
+                if asset_found:
+                    post_cryptoAsset = CryptoAsset()
+                    post_cryptoAsset.user_id = user_id
+                    post_cryptoAsset.name = json_crypto_assests[index]['name']
+                    post_cryptoAsset.symbol = json_crypto_assests[index]['symbol']
+                    post_cryptoAsset.rank = json_crypto_assests[index]['rank']
+                    post_cryptoAsset.price_usd = json_crypto_assests[index]['price_usd']
+                    post_cryptoAsset.put()
+                    post_cryptoAsset.id = str(post_cryptoAsset.key.urlsafe())
+                    post_cryptoAsset.put()
+                    post_cryptoAsset_dict = post_cryptoAsset.to_dict()
+                    post_cryptoAsset_dict['self'] = '/users/' + post_cryptoAsset.user_id + "/cryptoassets/" + post_cryptoAsset.id
+                    self.response.write(json.dumps(post_cryptoAsset_dict))
+                else:
+                    self.response.status = 400
+                    self.response.write("ERROR: Crypto Asset specified could not be found")
             else:
                 self.response.status = 400
-                self.response.write("ERROR: expected format -> {\"name\": \"str\", \"symbol\": \"str\", \"rank\": \"str\", \"price_usd\": \"str\"}")
+                self.response.write("ERROR: expected format -> {\"name\": \"str\"")
         else:
             self.response.status = 400
             self.response.write("ERROR: User does not exist")
