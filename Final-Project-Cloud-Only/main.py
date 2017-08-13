@@ -390,6 +390,10 @@ class UserAccountHandler(webapp2.RequestHandler):
                 UserAccount_key = user.id
         if user_account_exists:
             ndb.Key(urlsafe=UserAccount_key).delete()
+            for user in CryptoAsset.query():
+                if user.user_id == user_id:
+                    CryptoAsset_key = user.id
+                    ndb.Key(urlsafe=CryptoAsset_key).delete()
             self.response.write("SUCCESS: User's account was deleted")
         else:
             self.response.status = 400
